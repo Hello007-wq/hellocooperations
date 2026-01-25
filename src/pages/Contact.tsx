@@ -113,7 +113,7 @@ export function Contact() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
             Available on WhatsApp
           </div>
-          <h1 className="text-4xl md:text-5xl font-display leading-tight text-white">
+          <h1 className="text-4xl md:text-5xl font-display leading-tight text-gray-900 dark:text-white">
             Let's Build the <span className="text-gradient">Future.</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">

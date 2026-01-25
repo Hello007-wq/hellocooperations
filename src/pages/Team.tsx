@@ -35,7 +35,7 @@ export function Team() {
       {/* Hero */}
       <section className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl space-y-6">
-          <h1 className="text-4xl md:text-5xl font-display leading-tight text-white">
+          <h1 className="text-4xl md:text-5xl font-display leading-tight text-gray-900 dark:text-white">
             Meet the <span className="text-gradient">Founders.</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">

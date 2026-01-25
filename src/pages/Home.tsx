@@ -104,10 +104,10 @@ export function Home() {
                 <div className="w-10 h-10 md:w-14 md:h-14 bg-primary rounded-lg md:rounded-2xl flex items-center justify-center text-white shadow-lg">
                   <service.icon className="w-5 h-5 md:w-7 md:h-7" />
                 </div>
-                <h3 className="text-lg md:text-2xl font-display font-bold text-white">
+                <h3 className="text-lg md:text-2xl font-display font-bold text-gray-900 dark:text-white">
                   {service.title}
                 </h3>
-                <p className="text-white text-xs md:text-base leading-relaxed flex-grow">
+                <p className="text-gray-700 dark:text-white text-xs md:text-base leading-relaxed flex-grow">
                   {service.description}
                 </p>
                 <Link to={service.href} className="inline-flex items-center text-primary font-bold gap-2 group/link mt-4 md:mt-auto text-sm">
@@ -172,7 +172,9 @@ export function Home() {
                   ))}
                 </div>
                 <div className="pt-2 md:pt-4">
-                  <Button variant="outline" className="w-full rounded-lg md:rounded-xl text-sm">View Our Case Studies</Button>
+                  <Link to="/portfolio">
+                    <Button variant="outline" className="w-full rounded-lg md:rounded-xl text-sm">View Our Case Studies</Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -207,7 +209,7 @@ export function Home() {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white/10 rounded-full px-6 md:px-8 h-12 md:h-14 text-sm md:text-lg">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-black dark:text-white hover:bg-white/10 rounded-full px-6 md:px-8 h-12 md:h-14 text-sm md:text-lg">
                 Talk to Us
               </Button>
             </Link>

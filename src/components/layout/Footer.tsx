@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Rocket, Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
 
 export function Footer() {
@@ -8,11 +9,25 @@ export function Footer() {
       <div className="container mx-auto px-8 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-16">
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2">
+            {/* <Link to="/" className="flex items-center gap-2">
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/blink-451505.firebasestorage.app/o/user-uploads%2Fsd7yC1dZuyYpyDAISORlOeV95dJ3%2Flogo__06175f94.png?alt=media&token=731c3f47-6169-4db9-9ba0-da9cb3c65acb"
                 alt="Hello Co-Operations"
                 className="h-8 w-auto object-contain dark:invert"
+              />
+            </Link> */}
+            <Link to="/" className="flex items-center gap-2">
+              {/* Light theme logo */}
+              <img
+                src="/logo.png"
+                alt="Hello Co-Operations"
+                className="h-12 w-auto object-contain block dark:hidden"
+              />
+              {/* Dark theme logo */}
+              <img
+                src="/logo-dark.png"
+                alt="Hello Co-Operations"
+                className="h-12 w-auto object-contain hidden dark:block"
               />
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
@@ -25,7 +40,7 @@ export function Footer() {
               <a href="#" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
+              <a href="https://www.facebook.com/profile.php?id=61575608852361" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
                 <Facebook className="w-4 h-4" />
               </a>
               <a href="#" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
@@ -82,9 +97,44 @@ export function Footer() {
 
         <div className="border-t pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Hello Co-Operations. All rights reserved.</p>
-          <div className="flex gap-6">
+          {/* <div className="flex gap-6">
             <a href="#" className="hover:text-primary">Privacy Policy</a>
             <a href="#" className="hover:text-primary">Terms of Service</a>
+          </div> */}
+          <div className="flex gap-6">
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="hover:text-primary">Privacy Policy</button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Privacy Policy</DialogTitle>
+                  <DialogDescription>Placeholder overview of our privacy practices.</DialogDescription>
+                </DialogHeader>
+                <div className="text-sm text-muted-foreground space-y-3">
+                  <p>We collect minimal information necessary to provide our services.</p>
+                  <p>Your data is processed securely and never sold to third parties.</p>
+                  <p>Contact us to request access, correction, or deletion of your data.</p>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="hover:text-primary">Terms of Service</button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Terms of Service</DialogTitle>
+                  <DialogDescription>Placeholder summary of the terms for using our services.</DialogDescription>
+                </DialogHeader>
+                <div className="text-sm text-muted-foreground space-y-3">
+                  <p>Use of this site and services constitutes acceptance of these terms.</p>
+                  <p>All content is provided "as is" without warranties of any kind.</p>
+                  <p>By engaging our services, you agree to our payment and usage policies.</p>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>

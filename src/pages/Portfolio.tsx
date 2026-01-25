@@ -60,8 +60,8 @@ const projects = [
 export function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const filteredProjects = activeCategory === 'All' 
-    ? projects 
+  const filteredProjects = activeCategory === 'All'
+    ? projects
     : projects.filter(p => p.category === activeCategory);
 
   return (
@@ -69,7 +69,7 @@ export function Portfolio() {
       {/* Hero */}
       <section className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl space-y-6">
-          <h1 className="text-4xl md:text-5xl font-display leading-tight text-white">
+          <h1 className="text-4xl md:text-5xl font-display leading-tight text-gray-900 dark:text-white">
             Institutional <span className="text-gradient">Impact.</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
@@ -87,8 +87,8 @@ export function Portfolio() {
               onClick={() => setActiveCategory(cat)}
               className={cn(
                 "px-6 py-2 rounded-full text-sm font-bold transition-all",
-                activeCategory === cat 
-                  ? "bg-primary text-white shadow-lg" 
+                activeCategory === cat
+                  ? "bg-primary text-white shadow-lg"
                   : "hover:bg-primary/10 text-muted-foreground hover:text-primary"
               )}
             >
@@ -102,14 +102,14 @@ export function Portfolio() {
       <section className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, i) => (
-            <div 
-              key={project.title} 
+            <div
+              key={project.title}
               className="group flex flex-col bg-card border rounded-[2.5rem] overflow-hidden hover:shadow-elegant transition-all animate-fade-in"
               style={{ animationDelay: `${i * 100}ms` }}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -129,7 +129,7 @@ export function Portfolio() {
                 <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
                   {project.desc}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 pt-2">
                   {project.tags.map(tag => (
                     <span key={tag} className="text-[10px] font-bold text-primary/70 px-2 py-1 bg-primary/5 rounded border border-primary/10 uppercase tracking-tighter">
@@ -140,10 +140,12 @@ export function Portfolio() {
               </div>
 
               <div className="p-8 border-t bg-secondary/10">
-                <Button variant="link" className="p-0 h-auto font-bold text-primary group/btn">
-                  View Case Study
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                <Link to="/contact">
+                  <Button variant="link" className="p-0 h-auto font-bold text-primary group/btn">
+                    View Case Study
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}

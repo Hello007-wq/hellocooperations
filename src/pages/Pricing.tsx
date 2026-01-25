@@ -57,7 +57,7 @@ export function Pricing() {
       {/* Hero */}
       <section className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl space-y-6">
-          <h1 className="text-4xl md:text-5xl font-display leading-tight text-white">
+          <h1 className="text-4xl md:text-5xl font-display leading-tight text-gray-900 dark:text-white">
             Transparent <span className="text-gradient">Investment.</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
@@ -70,13 +70,12 @@ export function Pricing() {
       <section className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pricingTiers.map((tier) => (
-            <div 
-              key={tier.name} 
-              className={`p-10 rounded-[3rem] flex flex-col gap-8 transition-all ${
-                tier.highlight 
-                ? 'bg-primary text-white shadow-glow ring-4 ring-primary/20 scale-105 relative z-10' 
-                : 'bg-card border shadow-sm hover:shadow-elegant'
-              }`}
+            <div
+              key={tier.name}
+              className={`p-10 rounded-[3rem] flex flex-col gap-8 transition-all ${tier.highlight
+                  ? 'bg-primary text-white shadow-glow ring-4 ring-primary/20 scale-105 relative z-10'
+                  : 'bg-card border shadow-sm hover:shadow-elegant'
+                }`}
             >
               <div className="space-y-4">
                 <h3 className="text-2xl font-display font-bold">{tier.name}</h3>
@@ -99,12 +98,11 @@ export function Pricing() {
               </div>
 
               <Link to="/contact">
-                <Button 
-                  className={`w-full rounded-2xl h-14 text-lg font-bold ${
-                    tier.highlight 
-                    ? 'bg-white text-primary hover:bg-blue-50 shadow-lg' 
-                    : ''
-                  }`}
+                <Button
+                  className={`w-full rounded-2xl h-14 text-lg font-bold ${tier.highlight
+                      ? 'bg-white text-primary hover:bg-blue-50 shadow-lg'
+                      : ''
+                    }`}
                   variant={tier.highlight ? 'default' : 'outline'}
                 >
                   {tier.cta}

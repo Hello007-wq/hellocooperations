@@ -7,7 +7,7 @@ export function About() {
       {/* Hero */}
       <section className="container mx-auto px-8 lg:px-16">
         <div className="max-w-3xl space-y-6">
-          <h1 className="text-4xl md:text-5xl font-display leading-tight text-white">
+          <h1 className="text-4xl md:text-5xl font-display leading-tight text-gray-900 dark:text-white">
             Beyond Digital. <br /><span className="text-gradient">Institutional Growth.</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
@@ -96,7 +96,7 @@ export function About() {
               className="p-10 border rounded-[2.5rem] space-y-6 bg-card hover:shadow-xl transition-shadow text-center relative overflow-hidden"
               style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center', color: 'black/80' }}
             >
-              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/30" />
               <div className="relative z-10">
                 <div className="mx-auto w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary">
                   <item.icon className="w-10 h-10" />
