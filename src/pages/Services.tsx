@@ -1,14 +1,14 @@
 import React from 'react';
-import { 
-  Globe, 
-  Smartphone, 
-  Settings, 
-  Layers, 
-  Palette, 
-  PenTool, 
-  Layout, 
-  Share2, 
-  ShieldCheck, 
+import {
+  Globe,
+  Smartphone,
+  Settings,
+  Layers,
+  Palette,
+  PenTool,
+  Layout,
+  Share2,
+  ShieldCheck,
   ArrowRight
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -19,6 +19,7 @@ const services = [
     id: 'web-dev',
     title: 'Web Development',
     icon: Globe,
+    image: '/developer1.jfif',
     what: 'High-performance websites, portals, and web applications built with modern frameworks.',
     who: 'Colleges, hospitals, and organizations needing a robust digital headquarters.',
     benefit: 'Enhanced brand credibility, seamless student/patient interaction, and global accessibility.',
@@ -27,6 +28,7 @@ const services = [
     id: 'mobile-dev',
     title: 'Mobile App Development',
     icon: Smartphone,
+    image: '/mobileapp.jfif',
     what: 'Native and cross-platform mobile apps for iOS and Android.',
     who: 'Institutions wanting to engage users on the go through personalized mobile experiences.',
     benefit: 'Increased user retention, real-time notifications, and improved accessibility to services.',
@@ -35,6 +37,7 @@ const services = [
     id: 'system-dev',
     title: 'System Development',
     icon: Settings,
+    image: '/systemdev.jfif',
     what: 'Custom internal management systems, CRMs, and ERPs tailored to complex workflows.',
     who: 'Organizations dealing with large datasets and multi-departmental coordination.',
     benefit: 'Operational efficiency, eliminated data silos, and automated administrative tasks.',
@@ -43,6 +46,7 @@ const services = [
     id: 'ui-ux',
     title: 'UI/UX Design',
     icon: Layers,
+    image: '/design1.jfif',
     what: 'User-centric interface design and experience mapping based on psychological principles.',
     who: 'Digital products needing intuitive navigation and high conversion rates.',
     benefit: 'Reduced user frustration, increased completion rates for tasks, and professional aesthetic appeal.',
@@ -51,22 +55,24 @@ const services = [
     id: 'branding',
     title: 'Branding',
     icon: Palette,
+    image: '/branding.jfif',
     what: 'Strategic identity design including logos, color systems, and brand voice guidelines.',
     who: 'Institutions looking to establish a strong, professional, and memorable market presence.',
     benefit: 'Trust from stakeholders, market differentiation, and a unified institutional identity.',
   },
-  {
-    id: 'product-design',
-    title: 'Product Design',
-    icon: Layout,
-    what: 'End-to-end design of digital products from concept to high-fidelity prototypes.',
-    who: 'Innovators and organizations launching new digital services or tools.',
-    benefit: 'Validated product-market fit, reduced development risk, and superior market positioning.',
-  },
+  // {
+  //   id: 'product-design',
+  //   title: 'Product Design',
+  //   icon: Layout,
+  //   what: 'End-to-end design of digital products from concept to high-fidelity prototypes.',
+  //   who: 'Innovators and organizations launching new digital services or tools.',
+  //   benefit: 'Validated product-market fit, reduced development risk, and superior market positioning.',
+  // },
   {
     id: 'creative-design',
     title: 'Creative Design',
     icon: PenTool,
+    image: '/creativedesign.jfif',
     what: 'Graphic design for digital and print assets, annual reports, and marketing collateral.',
     who: 'Institutions requiring high-quality visual communications for reports and campaigns.',
     benefit: 'Clear communication of impact, professional representation, and engaging visual storytelling.',
@@ -75,6 +81,7 @@ const services = [
     id: 'marketing',
     title: 'Social Media Marketing',
     icon: Share2,
+    image: '/marketing1.jfif',
     what: 'Strategic content creation, management, and ad campaigns across social platforms.',
     who: 'Schools and hospitals wanting to reach prospective students or patients effectively.',
     benefit: 'Direct reach to target demographics, measurable growth, and community building.',
@@ -83,6 +90,7 @@ const services = [
     id: 'support',
     title: 'Maintenance & Support',
     icon: ShieldCheck,
+    image: '/maintenance.jfif',
     what: 'Ongoing technical support, security updates, and performance optimization.',
     who: 'Institutions that cannot afford downtime or security vulnerabilities.',
     benefit: 'Long-term system stability, guaranteed security, and peace of mind for leadership.',
@@ -115,7 +123,7 @@ export function Services() {
                   Detailed Service
                 </div>
                 <h2 className="text-3xl md:text-5xl font-display font-bold">{service.title}</h2>
-                
+
                 <div className="space-y-6">
                   <div className="p-6 bg-secondary/30 rounded-2xl space-y-2">
                     <h4 className="font-bold text-primary text-sm uppercase tracking-widest">What it is</h4>
@@ -144,11 +152,11 @@ export function Services() {
               <div className={`relative ${i % 2 !== 0 ? 'lg:order-1' : ''}`}>
                 <div
                   className="aspect-square bg-gradient-to-br from-primary/10 to-blue-500/5 rounded-[3rem] border border-primary/10 flex items-center justify-center p-12 overflow-hidden group"
-                  style={{ backgroundImage: `url('/sample.jfif')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                  style={{ backgroundImage: `url(${service.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                 >
                   <service.icon className="w-1/2 h-1/2 text-primary opacity-20 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500" />
                   <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
-                  
+
                   {/* Visual represention decorations */}
                   <div className="absolute top-10 left-10 w-20 h-20 border-t-2 border-l-2 border-primary/20 rounded-tl-3xl" />
                   <div className="absolute bottom-10 right-10 w-20 h-20 border-b-2 border-r-2 border-primary/20 rounded-br-3xl" />
@@ -167,7 +175,7 @@ export function Services() {
             Every institution is unique. We can combine our services into a custom digital transformation package that fits your specific goals.
           </p>
           <div className="flex justify-center">
-             <Link to="/contact">
+            <Link to="/contact">
               <Button size="lg" className="rounded-full px-12 h-14 text-lg">Talk to a Consultant</Button>
             </Link>
           </div>

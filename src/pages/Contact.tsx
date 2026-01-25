@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import emailjs from 'emailjs-com';
 
 const steps = [
   {
@@ -51,9 +52,57 @@ export function Contact() {
     const institution = formData.get('institution');
     const service = formData.get('service');
     const message = formData.get('message');
-    
+
     const whatsappMessage = `Hello Hello Co-Operations!%0A%0AMy name is ${name} from ${institution}.%0AI'm interested in ${service}.%0A%0AMessage: ${message}%0A%0AEmail: ${email}`;
     window.open(`https://wa.me/263771629805?text=${whatsappMessage}`, '_blank');
+  };
+
+  const handleEmailClick = async () => {
+    const formEl = document.getElementById('contact-form') as HTMLFormElement | null;
+    if (!formEl) {
+      return;
+    }
+    const formData = new FormData(formEl);
+    const name = (formData.get('name') || '').toString();
+    const email = (formData.get('email') || '').toString();
+    const institution = (formData.get('institution') || '').toString();
+    const service = (formData.get('service') || '').toString();
+    const message = (formData.get('message') || '').toString();
+
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
+
+    const fallbackMailto = () => {
+      const to = 'hellocooperations@gmail.com';
+      const subject = encodeURIComponent(`Inquiry: ${service} - ${institution}`);
+      const body = encodeURIComponent(
+        `Hello Hello Co-Operations,\n\nMy name is ${name} from ${institution}.` +
+        `\nI'm interested in ${service}.` +
+        `\n\nMessage: ${message}` +
+        `\n\nEmail: ${email}`
+      );
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    };
+
+    if (SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY) {
+      try {
+        await emailjs.send(
+          SERVICE_ID,
+          TEMPLATE_ID,
+          { name, email, institution, service, message },
+          PUBLIC_KEY
+        );
+        alert('Email sent successfully. We will get back to you shortly.');
+        return;
+      } catch (err) {
+        console.error('EmailJS send failed, falling back to mailto:', err);
+        fallbackMailto();
+        return;
+      }
+    }
+
+    fallbackMailto();
   };
 
   return (
@@ -118,7 +167,7 @@ export function Contact() {
             </div>
 
             <div className="space-y-8">
-              <a 
+              <a
                 href="https://wa.me/263771629805?text=Hello%20Hello%20Co-Operations!%20I%20would%20like%20to%20inquire%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
@@ -133,7 +182,7 @@ export function Contact() {
                   <p className="text-xs text-primary mt-1 font-bold">Message Hello Co-Operations now →</p>
                 </div>
               </a>
-              <a 
+              <a
                 href="tel:+263771629805"
                 className="flex items-start gap-6 p-4 -m-4 rounded-2xl hover:bg-secondary/30 transition-colors cursor-pointer"
               >
@@ -166,7 +215,7 @@ export function Contact() {
           </div>
 
           <div className="p-6 md:p-10 border rounded-2xl md:rounded-[3rem] bg-card shadow-elegant space-y-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
@@ -195,10 +244,16 @@ export function Contact() {
                 <Label htmlFor="message">How can we help you?</Label>
                 <Textarea id="message" name="message" placeholder="Tell us about your project or goals..." className="rounded-xl min-h-[150px]" required />
               </div>
-              <Button type="submit" size="lg" className="w-full rounded-xl h-14 text-lg group bg-green-600 hover:bg-green-700">
-                Continue on WhatsApp
-                <MessageCircle className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-              </Button>
+              <div className="space-y-3">
+                <Button type="submit" size="lg" className="w-full rounded-xl h-14 text-lg group bg-green-600 hover:bg-green-700">
+                  Continue on WhatsApp
+                  <MessageCircle className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                </Button>
+                <Button type="button" size="lg" className="w-full rounded-xl h-14 text-lg group bg-primary hover:bg-primary/90 text-white" onClick={handleEmailClick}>
+                  Send Email
+                  <Send className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                </Button>
+              </div>
             </form>
           </div>
         </div>

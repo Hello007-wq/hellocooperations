@@ -4,14 +4,14 @@ import { Rocket, Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } f
 
 export function Footer() {
   return (
-    <footer className="bg-secondary/30 border-t pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-secondary/30 border-t pt-20 pb-12">
+      <div className="container mx-auto px-8 lg:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-16">
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <img 
-                src="https://firebasestorage.googleapis.com/v0/b/blink-451505.firebasestorage.app/o/user-uploads%2Fsd7yC1dZuyYpyDAISORlOeV95dJ3%2Flogo__06175f94.png?alt=media&token=731c3f47-6169-4db9-9ba0-da9cb3c65acb" 
-                alt="Hello Co-Operations" 
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/blink-451505.firebasestorage.app/o/user-uploads%2Fsd7yC1dZuyYpyDAISORlOeV95dJ3%2Flogo__06175f94.png?alt=media&token=731c3f47-6169-4db9-9ba0-da9cb3c65acb"
+                alt="Hello Co-Operations"
                 className="h-8 w-auto object-contain dark:invert"
               />
             </Link>
@@ -63,10 +63,10 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Instagram className="w-4 h-4 text-primary shrink-0" />
-                <a 
-                  href="https://wa.me/263771629805?text=Hello%20Hello%20Co-Operations!%20I%20would%20like%20to%20inquire%20about%20your%20services." 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://wa.me/263771629805?text=Hello%20Hello%20Co-Operations!%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                 >
                   WhatsApp Support
@@ -80,7 +80,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
+        <div className="border-t pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Hello Co-Operations. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-primary">Privacy Policy</a>

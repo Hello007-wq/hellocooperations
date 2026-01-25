@@ -5,25 +5,25 @@ import { Button } from '@/components/ui/button';
 const team = [
   {
     name: 'Tinotenda Hove',
-    role: 'Co-Founder & Head of Technology',
+    role: 'Head of Technology',
     expertise: 'Software Engineering',
-    bio: 'Tinotenda is a systems architect with over a decade of experience building enterprise software for Zimbabwean institutions. He leads our development team in creating secure, scalable solutions.',
+    // bio: 'Tinotenda is a systems architect with over a decade of experience building enterprise software for Zimbabwean institutions. He leads our development team in creating secure, scalable solutions.',
     icon: Code,
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400'
   },
   {
     name: 'Weston N. Sululu',
-    role: 'Co-Founder & Creative Director',
+    role: 'Creative Director',
     expertise: 'Institutional Design',
-    bio: 'Weston is a visionary designer focused on creating bold, professional identities for Harare\'s leading organizations. He ensures every Hello Co-Ops project meets world-class design standards.',
+    // bio: 'Weston is a visionary designer focused on creating bold, professional identities for Harare\'s leading organizations. He ensures every Hello Co-Ops project meets world-class design standards.',
     icon: Palette,
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400'
   },
   {
     name: 'Peviorgents Pimbirimano',
-    role: 'Co-Founder & Growth Strategist',
+    role: 'Growth Strategist',
     expertise: 'Digital Marketing',
-    bio: 'Peviorgents specializes in institutional growth through data-driven digital marketing. He helps colleges and organizations in Harare expand their impact and reach the right audiences.',
+    // bio: 'Peviorgents specializes in institutional growth through data-driven digital marketing. He helps colleges and organizations in Harare expand their impact and reach the right audiences.',
     icon: BarChart4,
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400'
   }
@@ -66,9 +66,9 @@ export function Team() {
                 <div className="px-4 py-1 bg-secondary/50 rounded-full inline-block text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
                   Expertise: {member.expertise}
                 </div>
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                {/* <p className="text-muted-foreground leading-relaxed text-sm">
                   {member.bio}
-                </p>
+                </p> */}
               </div>
 
               <div className="flex items-center gap-4 pt-4 border-t w-full justify-center">
@@ -109,7 +109,7 @@ export function Team() {
                 ))}
               </div>
             </div>
-            
+
             <div className="relative aspect-square lg:aspect-auto h-full min-h-[400px] rounded-[4rem] overflow-hidden shadow-2xl">
               <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" alt="Team collaborating" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />

@@ -5,7 +5,7 @@ export function About() {
   return (
     <div className="flex flex-col gap-24 pb-20 pt-32">
       {/* Hero */}
-      <section className="container mx-auto px-4 md:px-6">
+      <section className="container mx-auto px-8 lg:px-16">
         <div className="max-w-3xl space-y-6">
           <h1 className="text-4xl md:text-5xl font-display leading-tight text-white">
             Beyond Digital. <br /><span className="text-gradient">Institutional Growth.</span>
@@ -21,9 +21,9 @@ export function About() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative rounded-3xl overflow-hidden aspect-video lg:aspect-square shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000" 
-                alt="Office space" 
+              <img
+                src="/office.jfif"
+                alt="Office space"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -31,7 +31,7 @@ export function About() {
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl font-display font-bold">Our Story</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  In a rapidly evolving digital landscape, many organizations in Zimbabwe found themselves left behind by generic solutions that didn't understand the unique needs of institutional scale. 
+                  In a rapidly evolving digital landscape, many organizations in Zimbabwe found themselves left behind by generic solutions that didn't understand the unique needs of institutional scale.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Hello Co-Operations was born from the collective expertise of designers, developers, and strategists who believed that Harare's colleges, hospitals, and enterprises deserved world-class digital assets. We set out to build a firm that combines technical rigor with a deep understanding of organizational growth.
@@ -66,7 +66,7 @@ export function About() {
             </p>
           </div>
           <div className="p-12 bg-card border rounded-[3rem] space-y-6 shadow-elegant relative overflow-hidden">
-             <div className="absolute top-0 right-0 p-8 opacity-5">
+            <div className="absolute top-0 right-0 p-8 opacity-5">
               <Eye className="w-32 h-32" />
             </div>
             <Eye className="w-12 h-12 text-primary" />
@@ -87,14 +87,14 @@ export function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: 'Colleges & Universities', icon: School, desc: 'Modernizing student experiences, administration, and digital presence for educational excellence.', image: '/public/sample.jfif' },
-            { title: 'Hospitals & Healthcare', icon: Hospital, desc: 'Implementing secure, efficient digital systems that enhance patient care and operational management.', image: '/public/sample.jfif' },
-            { title: 'Corporate Organizations', icon: Building2, desc: 'Designing and developing high-performance digital tools that drive business growth and brand authority.', image: '/public/sample.jfif' },
+            { title: 'Colleges & Universities', icon: School, desc: 'Modernizing student experiences, administration, and digital presence for educational excellence.', image: '/design1.jfif' },
+            { title: 'Hospitals & Healthcare', icon: Hospital, desc: 'Implementing secure, efficient digital systems that enhance patient care and operational management.', image: '/developer1.jfif' },
+            { title: 'Corporate Organizations', icon: Building2, desc: 'Designing and developing high-performance digital tools that drive business growth and brand authority.', image: '/marketing1.jfif' },
           ].map((item) => (
             <div
               key={item.title}
               className="p-10 border rounded-[2.5rem] space-y-6 bg-card hover:shadow-xl transition-shadow text-center relative overflow-hidden"
-              style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+              style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center', color: 'black/80' }}
             >
               <div className="absolute inset-0 bg-black/30" />
               <div className="relative z-10">

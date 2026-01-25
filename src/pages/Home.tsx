@@ -33,21 +33,21 @@ const institutions = [
 
 export function Home() {
   return (
-    <div className="flex flex-col gap-12 md:gap-20 pb-20">
+    <div className="flex flex-col gap-16 md:gap-24 pb-24">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-[95vh] flex items-center pt-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/sample.jfif"
+            src="/hero1.png"
             alt="Hero Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
+          <div className="absolute inset-0" />
         </div>
-        <div className="container mx-auto px-4 md:px-6 relative z-10 flex flex-col md:flex-row items-center gap-8">
+        <div className="container mx-auto px-8 lg:px-16 relative z-10 flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 space-y-6 md:space-y-8 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-display leading-tight text-white">
-              Digital Transformation for the <br/> <span className="text-gradient">Future-Ready</span> Institution
+              Digital Transformation for the <br /> <span className="text-gradient">Future-Ready</span> Institution
             </h1>
             <p className="text-sm md:text-base text-white/90 max-w-2xl leading-relaxed">
               Hello Co-Operations delivers smart software, bold design, and digital growth strategies to help colleges, hospitals, and organizations thrive in the digital age.
@@ -70,8 +70,8 @@ export function Home() {
       </section>
 
       {/* Stats/Institutions Section */}
-      <section className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 py-8 md:py-12 border-y bg-secondary/10 rounded-2xl md:rounded-3xl px-4 md:px-8">
+      <section className="container mx-auto px-6 lg:px-12 py-12 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
           {institutions.map((item) => (
             <div key={item.name} className="flex flex-col items-center justify-center text-center space-y-2 md:space-y-3">
               <div className="p-2 md:p-3 bg-primary/10 rounded-xl md:rounded-2xl text-primary">
@@ -84,7 +84,7 @@ export function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="container mx-auto px-4 md:px-6 space-y-8 md:space-y-12">
+      <section className="container mx-auto px-6 lg:px-12 space-y-12 md:space-y-16">
         <div className="text-center space-y-2 md:space-y-4 max-w-2xl mx-auto">
           <h2 className="text-2xl md:text-5xl font-display font-bold">Comprehensive Solutions</h2>
           <p className="text-muted-foreground text-sm md:text-base">We provide enterprise-grade services to modernize your operations and expand your digital footprint.</p>
@@ -95,7 +95,7 @@ export function Home() {
             <div
               key={service.title}
               className="group p-5 md:p-8 bg-card border rounded-xl md:rounded-3xl hover:border-primary/50 transition-all hover:shadow-elegant relative overflow-hidden flex flex-col"
-              style={{ backgroundImage: `url('/sample.jfif')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+              style={{ backgroundImage: `url('#')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
             >
               <div className="absolute top-0 right-0 p-4 md:p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                 <service.icon className="w-16 md:w-32 h-16 md:h-32" />
@@ -121,8 +121,8 @@ export function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-secondary/20 py-12 md:py-24">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="bg-secondary/20 py-16 md:py-32">
+        <div className="container mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="space-y-6 md:space-y-8">
               <div className="space-y-2 md:space-y-4">
@@ -181,20 +181,20 @@ export function Home() {
       </section>
 
       {/* Trust Section */}
-      <section className="container mx-auto px-4 md:px-6 text-center space-y-6 md:space-y-12">
+      <section className="container mx-auto px-6 lg:px-12 text-center space-y-8 md:space-y-16">
         <h3 className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-muted-foreground">Trusted by Harare's Leading Institutions</h3>
         <div className="flex flex-wrap justify-center items-center gap-6 md:gap-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
-           {/* Placeholder Logos */}
-           <div className="text-lg md:text-2xl font-bold font-display">UNIVERSITY</div>
-           <div className="text-lg md:text-2xl font-bold font-display">MEDICAL CTR</div>
-           <div className="text-lg md:text-2xl font-bold font-display hidden sm:block">GLOBAL ORG</div>
-           <div className="text-lg md:text-2xl font-bold font-display hidden sm:block">GOVT DEPT</div>
+          {/* Placeholder Logos */}
+          <div className="text-lg md:text-2xl font-bold font-display">UNIVERSITY</div>
+          <div className="text-lg md:text-2xl font-bold font-display">MEDICAL CTR</div>
+          <div className="text-lg md:text-2xl font-bold font-display hidden sm:block">GLOBAL ORG</div>
+          <div className="text-lg md:text-2xl font-bold font-display hidden sm:block">GOVT DEPT</div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-4 md:px-6">
-        <div className="bg-primary rounded-2xl md:rounded-[3rem] p-6 md:p-24 text-white text-center space-y-4 md:space-y-8 relative overflow-hidden shadow-glow">
+      <section className="container mx-auto px-6 lg:px-12">
+        <div className="bg-primary rounded-2xl md:rounded-[3rem] p-8 md:p-32 text-white text-center space-y-8 md:space-y-16 relative overflow-hidden shadow-glow">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <h2 className="text-2xl md:text-6xl font-display font-bold relative z-10">Ready to transform your <br className="hidden md:block" /> institution?</h2>
           <p className="text-blue-100 text-sm md:text-xl max-w-2xl mx-auto relative z-10">
