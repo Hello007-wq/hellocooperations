@@ -37,17 +37,14 @@ export function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[85vh] md:min-h-[95vh] flex items-center pt-24 overflow-hidden">
         <div className="absolute inset-0">
-          {/* Light theme image */}
           <img
-            src="/hero-light.png"  // replace with your light image
+            src="/hero1.png"
             alt="Hero Background"
             className="w-full h-full object-cover block dark:hidden"
           />
-
-          {/* Dark theme image */}
           <img
-            src="/hero-dark.png"  // replace with your dark image
-            alt="Hero Background"
+            src="/hero-dark.png"
+            alt="Hero Background Dark"
             className="w-full h-full object-cover hidden dark:block"
           />
           <div className="absolute inset-0" />

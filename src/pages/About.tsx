@@ -87,16 +87,16 @@ export function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: 'Colleges & Universities', icon: School, desc: 'Modernizing student experiences, administration, and digital presence for educational excellence.', image: '/design1.jfif' },
-            { title: 'Hospitals & Healthcare', icon: Hospital, desc: 'Implementing secure, efficient digital systems that enhance patient care and operational management.', image: '/developer1.jfif' },
-            { title: 'Corporate Organizations', icon: Building2, desc: 'Designing and developing high-performance digital tools that drive business growth and brand authority.', image: '/marketing1.jfif' },
+            { title: 'Colleges & Universities', icon: School, desc: 'Modernizing student experiences, administration, and digital presence for educational excellence.', image: '/college.jfif' },
+            { title: 'Hospitals & Healthcare', icon: Hospital, desc: 'Implementing secure, efficient digital systems that enhance patient care and operational management.', image: '/medical.jfif' },
+            { title: 'Corporate Organizations', icon: Building2, desc: 'Designing and developing high-performance digital tools that drive business growth and brand authority.', image: '/corporate.png' },
           ].map((item) => (
             <div
               key={item.title}
               className="p-10 border rounded-[2.5rem] space-y-6 bg-card hover:shadow-xl transition-shadow text-center relative overflow-hidden"
               style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center', color: 'black/80' }}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/80 to-black/50" />
               <div className="relative z-10">
                 <div className="mx-auto w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary">
                   <item.icon className="w-10 h-10" />

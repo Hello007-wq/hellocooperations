@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, ArrowRight, Code, Palette, BarChart4 } from 'lucide-react';
+import { ExternalLink, Code, Palette, BarChart4 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-const categories = ['All', 'Software', 'Design', 'Marketing'];
+const categories = ['Software', 'Design', 'Marketing'];
 
 const projects = [
   {
-    title: 'University Student Portal',
+    title: 'Health Care Native App',
     category: 'Software',
-    desc: 'A complete digital ecosystem for a leading Zimbabwean college, integrating registration, results, and fee management.',
-    image: 'https://images.unsplash.com/photo-1523050335392-9bef867a0578?auto=format&fit=crop&q=80&w=800',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Cloud Hosting'],
-    stat: '15,000+ Active Users'
+    desc: 'A completely offline mobile android app for a health institution to help patients with general medical issues.',
+    image: '/health aid app.png',
+    tags: ['React Native', 'Android', 'TypeScript'],
+    stat: '100+ Active Users'
   },
   {
     title: 'Heritage Hospital Branding',
@@ -32,12 +32,12 @@ const projects = [
     stat: '40% Enrollment Boost'
   },
   {
-    title: 'Corporate ERP System',
+    title: 'Forex-Education App',
     category: 'Software',
     desc: 'Custom inventory and payroll management system for a large-scale Harare-based manufacturing organization.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-    tags: ['Custom ERP', 'Inventory Control', 'Payroll Automation'],
-    stat: 'Operational Efficiency'
+    image: '/foxerly.png',
+    tags: ['Native Android', 'Vite', 'Variables'],
+    stat: 'Easy Navigation'
   },
   {
     title: 'Institutional Annual Report',
@@ -86,7 +86,7 @@ export function Portfolio() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={cn(
-                "px-6 py-2 rounded-full text-sm font-bold transition-all",
+                "px-6 py-2 rounded-full text-xs font-bold transition-all",
                 activeCategory === cat
                   ? "bg-primary text-white shadow-lg"
                   : "hover:bg-primary/10 text-muted-foreground hover:text-primary"
@@ -115,7 +115,7 @@ export function Portfolio() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
                 <div className="absolute top-6 left-6">
-                  <span className="px-4 py-1 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
+                  <span className="px-4 py-1 bg-black/40 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
                     {project.category}
                   </span>
                 </div>
@@ -140,12 +140,12 @@ export function Portfolio() {
               </div>
 
               <div className="p-8 border-t bg-secondary/10">
-                <Link to="/contact">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <Button variant="link" className="p-0 h-auto font-bold text-primary group/btn">
-                    View Case Study
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    View Project
+                    <ExternalLink className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           ))}

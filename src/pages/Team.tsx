@@ -114,7 +114,7 @@ export function Team() {
               <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" alt="Team collaborating" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
               <div className="absolute bottom-12 left-12 right-12 text-white">
-                <div className="text-4xl font-display font-bold mb-2 italic">"Institutional transformation is a marathon, not a sprint."</div>
+                <div className=" text-2xl font-display font-bold mb-2 italic">"Institutional transformation is a marathon, not a sprint."</div>
                 <div className="font-bold uppercase tracking-widest text-sm opacity-80">— Hello Co-Operations Founders</div>
               </div>
             </div>

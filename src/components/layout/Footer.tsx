@@ -21,13 +21,13 @@ export function Footer() {
               <img
                 src="/logo.png"
                 alt="Hello Co-Operations"
-                className="h-12 w-auto object-contain block dark:hidden"
+                className="h-13 w-auto object-contain block dark:hidden"
               />
               {/* Dark theme logo */}
               <img
                 src="/logo-dark.png"
                 alt="Hello Co-Operations"
-                className="h-12 w-auto object-contain hidden dark:block"
+                className="h-13 w-auto object-contain hidden dark:block"
               />
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
