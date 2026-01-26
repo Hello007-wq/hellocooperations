@@ -34,16 +34,16 @@ export function Footer() {
               Smart software, bold design & digital growth. Harare's trusted digital transformation partner for institutions.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
+              {/* <a href="#" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
                 <Linkedin className="w-4 h-4" />
-              </a>
-              <a href="#" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
+              </a> */}
+              <a href="x.com/HCoopetati87075" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
                 <Twitter className="w-4 h-4" />
               </a>
               <a href="https://www.facebook.com/profile.php?id=61575608852361" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
+              <a href="instagram.com/hellocooperations2026" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
                 <Instagram className="w-4 h-4" />
               </a>
             </div>
