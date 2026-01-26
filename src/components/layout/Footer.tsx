@@ -37,13 +37,13 @@ export function Footer() {
               {/* <a href="#" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
                 <Linkedin className="w-4 h-4" />
               </a> */}
-              <a href="x.com/HCoopetati87075" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
+              <a href="https://www.x.com/HCoopetati87075" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
                 <Twitter className="w-4 h-4" />
               </a>
               <a href="https://www.facebook.com/profile.php?id=61575608852361" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="instagram.com/hellocooperations2026" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
+              <a href="https://www.instagram.com/hellocooperations2026" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
                 <Instagram className="w-4 h-4" />
               </a>
             </div>
