@@ -16,28 +16,76 @@ const projects = [
     stat: '100+ Active Users'
   },
   {
-    title: 'Heritage Hospital Branding',
-    category: 'Design',
-    desc: 'Total visual identity overhaul for a private medical center, focusing on trust, cleanliness, and professionalism.',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800',
-    tags: ['Logo Design', 'Brand Strategy', 'Identity System'],
+    title: 'AI Note Taking Platform',
+    category: 'Software',
+    desc: 'Professional and sleek platform to use as a note taking tool. It is integrated with an AI that can depict notes even from podcasts',
+    image: '/SmartScribe Logo.png',
+    tags: ['API Integration', 'React JSX', 'Tailwind CSS'],
     stat: 'Modern & Reliable'
   },
   {
-    title: 'National School Enrollment Campaign',
-    category: 'Marketing',
-    desc: 'A data-driven social media campaign that increased enrollments by 40% for an private educational group.',
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800',
+    title: 'Anime Trackr',
+    category: 'Software',
+    desc: 'A native tool, people can use to track their progress on their watched shows specifically anime genre.',
+    image: '/anime trackr.png',
     tags: ['Lead Gen', 'Facebook Ads', 'SEO', 'Email Funnels'],
-    stat: '40% Enrollment Boost'
+    stat: 'Progress Monitor'
   },
   {
     title: 'Forex-Education App',
     category: 'Software',
-    desc: 'Custom inventory and payroll management system for a large-scale Harare-based manufacturing organization.',
+    desc: `A mobile app that serves as a guard to one's navigation to the world of Forex trade. Foxerly provides the basics of forex trade`,
     image: '/foxerly.png',
     tags: ['Native Android', 'Vite', 'Variables'],
     stat: 'Easy Navigation'
+  },
+  {
+    title: 'Credit Score',
+    category: 'Software',
+    desc: 'A comprehensive platform providing users with their credit score and report to ensure financial health',
+    image: '/credit score.png',
+    tags: ['React TSX', 'Supabase', 'Evaluation'],
+    stat: 'Financial Health'
+  },
+  {
+    title: 'E-Commerce Fashion Website',
+    category: 'Software',
+    desc: 'Your premier destination for trendy clothing and accessories.',
+    image: '/kwamefashion.png',
+    tags: ['Supabase', 'Stripe', 'React TSX'],
+    stat: 'Global Reach'
+  },
+  {
+    title: 'Institutional Annual Report',
+    category: 'Design',
+    desc: 'High-end editorial design for a government agency annual report, focusing on data visualization and impact storytelling.',
+    image: 'https://images.unsplash.com/photo-1544383335-c54936d52570?auto=format&fit=crop&q=80&w=800',
+    tags: ['Editorial Design', 'Data Visualization', 'Print Design'],
+    stat: 'Impact Storytelling'
+  },
+  {
+    title: 'Global NGO Digital Strategy',
+    category: 'Marketing',
+    desc: 'Complete digital strategy and management for an international NGO working in Southern Africa.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
+    tags: ['Digital Strategy', 'Community Management', 'PR'],
+    stat: 'Global Reach'
+  },
+  {
+    title: 'Institutional Annual Report',
+    category: 'Design',
+    desc: 'High-end editorial design for a government agency annual report, focusing on data visualization and impact storytelling.',
+    image: 'https://images.unsplash.com/photo-1544383335-c54936d52570?auto=format&fit=crop&q=80&w=800',
+    tags: ['Editorial Design', 'Data Visualization', 'Print Design'],
+    stat: 'Impact Storytelling'
+  },
+  {
+    title: 'Global NGO Digital Strategy',
+    category: 'Marketing',
+    desc: 'Complete digital strategy and management for an international NGO working in Southern Africa.',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
+    tags: ['Digital Strategy', 'Community Management', 'PR'],
+    stat: 'Global Reach'
   },
   {
     title: 'Institutional Annual Report',
@@ -86,7 +134,7 @@ export function Portfolio() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={cn(
-                "px-6 py-2 rounded-full text-xs font-bold transition-all",
+                "px-6 py-2 rounded-full text-s font-bold transition-all",
                 activeCategory === cat
                   ? "bg-primary text-white shadow-lg"
                   : "hover:bg-primary/10 text-muted-foreground hover:text-primary"
@@ -171,17 +219,17 @@ export function Portfolio() {
             <div className="p-6 bg-card border rounded-3xl space-y-4">
               <Code className="w-8 h-8 text-primary" />
               <h4 className="font-bold uppercase tracking-widest text-xs">Software Projects</h4>
-              <p className="text-2xl font-display font-bold">20+</p>
+              <p className="text-2xl font-display font-bold">15+</p>
             </div>
             <div className="p-6 bg-card border rounded-3xl space-y-4">
               <Palette className="w-8 h-8 text-primary" />
               <h4 className="font-bold uppercase tracking-widest text-xs">Design Systems</h4>
-              <p className="text-2xl font-display font-bold">15+</p>
+              <p className="text-2xl font-display font-bold">40+</p>
             </div>
             <div className="p-6 bg-card border rounded-3xl space-y-4 sm:col-span-2">
               <BarChart4 className="w-8 h-8 text-primary" />
               <h4 className="font-bold uppercase tracking-widest text-xs">Growth Campaigns</h4>
-              <p className="text-2xl font-display font-bold">30+</p>
+              <p className="text-2xl font-display font-bold">10+</p>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Globe,
   Smartphone,
@@ -6,10 +6,9 @@ import {
   Layers,
   Palette,
   PenTool,
-  Layout,
   Share2,
   ShieldCheck,
-  ArrowRight
+  ArrowRight,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -22,7 +21,7 @@ const services = [
     image: '/developer1.jfif',
     what: 'High-performance websites, portals, and web applications built with modern frameworks.',
     who: 'Colleges, hospitals, and organizations needing a robust digital headquarters.',
-    benefit: 'Enhanced brand credibility, seamless student/patient interaction, and global accessibility.',
+    benefit: 'Enhanced brand credibility, seamless interaction, and global accessibility.',
   },
   {
     id: 'mobile-dev',
@@ -30,116 +29,167 @@ const services = [
     icon: Smartphone,
     image: '/mobileapp.jfif',
     what: 'Native and cross-platform mobile apps for iOS and Android.',
-    who: 'Institutions wanting to engage users on the go through personalized mobile experiences.',
-    benefit: 'Increased user retention, real-time notifications, and improved accessibility to services.',
+    who: 'Institutions wanting to engage users on the go.',
+    benefit: 'Higher engagement, real-time communication, and improved service access.',
   },
   {
     id: 'system-dev',
     title: 'System Development',
     icon: Settings,
     image: '/systemdev.jfif',
-    what: 'Custom internal management systems, CRMs, and ERPs tailored to complex workflows.',
-    who: 'Organizations dealing with large datasets and multi-departmental coordination.',
-    benefit: 'Operational efficiency, eliminated data silos, and automated administrative tasks.',
+    what: 'Custom CRMs, ERPs, and internal systems for complex workflows.',
+    who: 'Organizations managing large datasets and multi-department operations.',
+    benefit: 'Operational efficiency, automation, and data clarity.',
   },
   {
     id: 'ui-ux',
     title: 'UI/UX Design',
     icon: Layers,
     image: '/design1.jfif',
-    what: 'User-centric interface design and experience mapping based on psychological principles.',
-    who: 'Digital products needing intuitive navigation and high conversion rates.',
-    benefit: 'Reduced user frustration, increased completion rates for tasks, and professional aesthetic appeal.',
+    what: 'User-focused interface and experience design.',
+    who: 'Digital platforms needing clarity and usability.',
+    benefit: 'Improved satisfaction, conversions, and professional polish.',
   },
   {
     id: 'branding',
     title: 'Branding',
     icon: Palette,
     image: '/branding.jfif',
-    what: 'Strategic identity design including logos, color systems, and brand voice guidelines.',
-    who: 'Institutions looking to establish a strong, professional, and memorable market presence.',
-    benefit: 'Trust from stakeholders, market differentiation, and a unified institutional identity.',
+    what: 'Strategic identity systems and brand guidelines.',
+    who: 'Institutions establishing credibility and recognition.',
+    benefit: 'Trust, consistency, and differentiation.',
   },
-  // {
-  //   id: 'product-design',
-  //   title: 'Product Design',
-  //   icon: Layout,
-  //   what: 'End-to-end design of digital products from concept to high-fidelity prototypes.',
-  //   who: 'Innovators and organizations launching new digital services or tools.',
-  //   benefit: 'Validated product-market fit, reduced development risk, and superior market positioning.',
-  // },
   {
     id: 'creative-design',
     title: 'Creative Design',
     icon: PenTool,
     image: '/creativedesign.jfif',
-    what: 'Graphic design for digital and print assets, annual reports, and marketing collateral.',
-    who: 'Institutions requiring high-quality visual communications for reports and campaigns.',
-    benefit: 'Clear communication of impact, professional representation, and engaging visual storytelling.',
+    what: 'Graphic design for reports, campaigns, and digital assets.',
+    who: 'Institutions communicating impact visually.',
+    benefit: 'Clear storytelling and professional representation.',
   },
   {
     id: 'marketing',
     title: 'Social Media Marketing',
     icon: Share2,
     image: '/marketing1.jfif',
-    what: 'Strategic content creation, management, and ad campaigns across social platforms.',
-    who: 'Schools and hospitals wanting to reach prospective students or patients effectively.',
-    benefit: 'Direct reach to target demographics, measurable growth, and community building.',
+    what: 'Strategic content and ad campaigns across social platforms.',
+    who: 'Schools and hospitals reaching new audiences.',
+    benefit: 'Measured growth and stronger communities.',
+  },
+  {
+    id: 'ai-automation',
+    title: 'AI Automation',
+    icon: Layers,
+    image: '/ai-automation.jfif',
+    what: 'AI-powered automation, chatbots, and decision-support systems.',
+    who: 'Institutions handling repetitive workflows and high enquiry volumes.',
+    benefit: 'Lower costs, faster service delivery, smarter decisions.',
   },
   {
     id: 'support',
     title: 'Maintenance & Support',
     icon: ShieldCheck,
     image: '/maintenance.jfif',
-    what: 'Ongoing technical support, security updates, and performance optimization.',
-    who: 'Institutions that cannot afford downtime or security vulnerabilities.',
-    benefit: 'Long-term system stability, guaranteed security, and peace of mind for leadership.',
+    what: 'Ongoing support, security updates, and optimization.',
+    who: 'Institutions that require stability and uptime.',
+    benefit: 'Peace of mind, security, and long-term reliability.',
   },
 ];
 
 export function Services() {
+  const [activeService, setActiveService] = useState<string | null>(null);
+
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) setActiveService(hash);
+  }, []);
+
   return (
     <div className="flex flex-col gap-24 pb-20 pt-32">
       {/* Hero */}
       <section className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl space-y-6">
-          <h1 className="text-4xl md:text-5xl font-display leading-tight text-gray-900 dark:text-white">
-            Enterprise-Grade <span className="text-gradient">Services.</span>
+          <h1 className="text-4xl md:text-5xl font-display">
+            Enterprise-Grade <span className="text-gradient">Services</span>
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            We offer a comprehensive suite of digital transformation services designed to modernize and scale Harare's leading institutions.
+          <p className="text-xl text-muted-foreground">
+            Explore our capabilities, then dive deeper into the services that matter most to your institution.
           </p>
         </div>
       </section>
 
-      {/* Detailed Services */}
-      <section className="space-y-32">
-        {services.map((service, i) => (
-          <div key={service.id} id={service.id} className="scroll-mt-32">
-            <div className={`container mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
-              <div className={`space-y-8 ${i % 2 !== 0 ? 'lg:order-2' : ''}`}>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
-                  <service.icon className="w-4 h-4" />
-                  Detailed Service
+      {/* Services Overview */}
+      {!activeService && (
+        <section className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map(service => (
+              <button
+                key={service.id}
+                onClick={() => {
+                  setActiveService(service.id);
+                  window.history.pushState(null, '', `#${service.id}`);
+                }}
+                className="group text-left p-6 rounded-2xl border bg-card hover:border-primary/40 hover:shadow-lg transition-all"
+              >
+                <div className="space-y-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                    <service.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-display font-bold group-hover:text-primary">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground line-clamp-3">
+                    {service.what}
+                  </p>
+                  <div className="inline-flex items-center text-primary font-bold gap-2">
+                    View details
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
-                <h2 className="text-3xl md:text-5xl font-display font-bold">{service.title}</h2>
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
 
-                <div className="space-y-6">
-                  <div className="p-6 bg-secondary/30 rounded-2xl space-y-2">
-                    <h4 className="font-bold text-primary text-sm uppercase tracking-widest">What it is</h4>
-                    <p className="text-muted-foreground">{service.what}</p>
-                  </div>
-                  <div className="p-6 bg-secondary/30 rounded-2xl space-y-2">
-                    <h4 className="font-bold text-primary text-sm uppercase tracking-widest">Who it is for</h4>
-                    <p className="text-muted-foreground">{service.who}</p>
-                  </div>
-                  <div className="p-6 bg-primary/5 border border-primary/10 rounded-2xl space-y-2">
-                    <h4 className="font-bold text-primary text-sm uppercase tracking-widest">The Benefit</h4>
-                    <p className="text-foreground font-medium">{service.benefit}</p>
-                  </div>
-                </div>
+      {/* Detailed Service (only when selected) */}
+      {activeService && (
+        <section className="container mx-auto px-4 md:px-6 space-y-16 border-t pt-24">
+          <button
+            onClick={() => {
+              setActiveService(null);
+              window.history.pushState(null, '', '/services');
+            }}
+            className="text-sm font-bold text-primary hover:underline"
+          >
+            ← Back to all services
+          </button>
 
-                <div className="pt-4">
+          {services
+            .filter(service => service.id === activeService)
+            .map(service => (
+              <div key={service.id} className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="space-y-8">
+                  <h2 className="text-3xl md:text-5xl font-display font-bold">
+                    {service.title}
+                  </h2>
+
+                  <div className="space-y-6">
+                    <div className="p-6 bg-secondary/30 rounded-2xl">
+                      <h4 className="font-bold text-primary text-sm uppercase">What it is</h4>
+                      <p className="text-muted-foreground">{service.what}</p>
+                    </div>
+                    <div className="p-6 bg-secondary/30 rounded-2xl">
+                      <h4 className="font-bold text-primary text-sm uppercase">Who it’s for</h4>
+                      <p className="text-muted-foreground">{service.who}</p>
+                    </div>
+                    <div className="p-6 bg-primary/5 border border-primary/10 rounded-2xl">
+                      <h4 className="font-bold text-primary text-sm uppercase">The benefit</h4>
+                      <p className="font-medium">{service.benefit}</p>
+                    </div>
+                  </div>
+
                   <Link to="/contact">
                     <Button className="rounded-full px-8 h-12 group">
                       Inquire About This Service
@@ -147,40 +197,15 @@ export function Services() {
                     </Button>
                   </Link>
                 </div>
-              </div>
 
-              <div className={`relative ${i % 2 !== 0 ? 'lg:order-1' : ''}`}>
                 <div
-                  className="aspect-square bg-gradient-to-br from-primary/10 to-blue-500/5 rounded-[3rem] border border-primary/10 flex items-center justify-center p-12 overflow-hidden group"
-                  style={{ backgroundImage: `url(${service.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                >
-                  <service.icon className="w-1/2 h-1/2 text-primary opacity-20 group-hover:scale-110 group-hover:opacity-40 transition-all duration-500" />
-                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
-
-                  {/* Visual represention decorations */}
-                  <div className="absolute top-10 left-10 w-20 h-20 border-t-2 border-l-2 border-primary/20 rounded-tl-3xl" />
-                  <div className="absolute bottom-10 right-10 w-20 h-20 border-b-2 border-r-2 border-primary/20 rounded-br-3xl" />
-                </div>
+                  className="aspect-square rounded-[3rem] border border-primary/10 overflow-hidden bg-cover bg-center"
+                  style={{ backgroundImage: `url(${service.image})` }}
+                />
               </div>
-            </div>
-          </div>
-        ))}
-      </section>
-
-      {/* CTA */}
-      <section className="container mx-auto px-4 md:px-6">
-        <div className="bg-primary/5 border border-primary/10 rounded-[3rem] p-12 md:p-24 text-center space-y-8">
-          <h2 className="text-3xl md:text-5xl font-display font-bold">Need a Custom Package?</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Every institution is unique. We can combine our services into a custom digital transformation package that fits your specific goals.
-          </p>
-          <div className="flex justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="rounded-full px-12 h-14 text-lg">Talk to a Consultant</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+            ))}
+        </section>
+      )}
     </div>
   );
 }

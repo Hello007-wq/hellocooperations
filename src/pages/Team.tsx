@@ -1,23 +1,23 @@
 import React from 'react';
-import { Linkedin, Twitter, Mail, Code, Palette, BarChart4 } from 'lucide-react';
+import { Code, Palette, BarChart4 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const team = [
   {
     name: 'Tinotenda Hove',
-    role: 'Head of Technology',
+    role: 'Chief Technology Officer',
     expertise: 'Software Engineering',
     // bio: 'Tinotenda is a systems architect with over a decade of experience building enterprise software for Zimbabwean institutions. He leads our development team in creating secure, scalable solutions.',
     icon: Code,
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400'
+    image: '/cto.png'
   },
   {
     name: 'Weston N. Sululu',
-    role: 'Creative Director',
+    role: 'CHief Creative Officer',
     expertise: 'Institutional Design',
     // bio: 'Weston is a visionary designer focused on creating bold, professional identities for Harare\'s leading organizations. He ensures every Hello Co-Ops project meets world-class design standards.',
     icon: Palette,
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400'
+    image: '/cco.png'
   },
   {
     name: 'Peviorgents Pimbirimano',
@@ -25,7 +25,7 @@ const team = [
     expertise: 'Digital Marketing',
     // bio: 'Peviorgents specializes in institutional growth through data-driven digital marketing. He helps colleges and organizations in Harare expand their impact and reach the right audiences.',
     icon: BarChart4,
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400'
+    image: '/pevy.jpg'
   }
 ];
 
@@ -71,7 +71,7 @@ export function Team() {
                 </p> */}
               </div>
 
-              <div className="flex items-center gap-4 pt-4 border-t w-full justify-center">
+              {/* <div className="flex items-center gap-4 pt-4 border-t w-full justify-center">
                 <a href="#" className="p-3 bg-secondary/30 rounded-xl hover:bg-primary hover:text-white transition-all">
                   <Linkedin className="w-5 h-5" />
                 </a>
@@ -81,7 +81,7 @@ export function Team() {
                 <a href="#" className="p-3 bg-secondary/30 rounded-xl hover:bg-primary hover:text-white transition-all">
                   <Mail className="w-5 h-5" />
                 </a>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

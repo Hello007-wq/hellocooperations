@@ -56,6 +56,7 @@ export function Footer() {
               <li><Link to="/services" className="hover:text-primary transition-colors">Mobile App Development</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors">System Development</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors">UI/UX & Branding</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">AI Automation</Link></li>
             </ul>
           </div>
 
@@ -109,7 +110,7 @@ export function Footer() {
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Privacy Policy</DialogTitle>
-                  <DialogDescription>Placeholder overview of our privacy practices.</DialogDescription>
+                  <DialogDescription>Overview of our psrivacy practices.</DialogDescription>
                 </DialogHeader>
                 <div className="text-sm text-muted-foreground space-y-3">
                   <p>We collect minimal information necessary to provide our services.</p>
@@ -126,7 +127,7 @@ export function Footer() {
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Terms of Service</DialogTitle>
-                  <DialogDescription>Placeholder summary of the terms for using our services.</DialogDescription>
+                  <DialogDescription>Summary of the terms for using our services.</DialogDescription>
                 </DialogHeader>
                 <div className="text-sm text-muted-foreground space-y-3">
                   <p>Use of this site and services constitutes acceptance of these terms.</p>

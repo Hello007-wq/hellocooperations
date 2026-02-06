@@ -2,8 +2,8 @@
 module.exports = {
     darkMode: ["class"],
     content: [
-      "./index.html",
-      "./src/**/*.{js,ts,jsx,tsx}",
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
         extend: {
@@ -50,6 +50,20 @@ module.exports = {
                     'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
                     border: 'hsl(var(--sidebar-border))',
                     ring: 'hsl(var(--sidebar-ring))'
+                },
+
+                animation: {
+                    'scroll': 'scroll 20s linear infinite',
+                    'fade-in': 'fade-in 0.5s ease-out',
+                    'slide-up': 'slide-up 0.5s ease-out',
+                    'accordion-down': 'accordion-down 0.2s ease-out',
+                    'accordion-up': 'accordion-up 0.2s ease-out'
+                },
+                keyframes: {
+                    scroll: {
+                        '0%': { transform: 'translateX(0)' },
+                        '100%': { transform: 'translateX(calc(-100%))' },
+                    },
                 },
                 chart: {
                     '1': 'hsl(var(--chart-1))',
@@ -128,4 +142,4 @@ module.exports = {
         }
     },
     plugins: [require("tailwindcss-animate")],
-  } 
+} 

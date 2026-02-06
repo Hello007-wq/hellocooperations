@@ -188,16 +188,34 @@ export function Home() {
       </section>
 
       {/* Trust Section */}
-      <section className="container mx-auto px-6 lg:px-12 text-center space-y-8 md:space-y-16">
-        <h3 className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-muted-foreground">Trusted by Harare's Leading Institutions</h3>
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
-          {/* Placeholder Logos */}
-          <div className="text-lg md:text-2xl font-bold font-display">UNIVERSITY</div>
-          <div className="text-lg md:text-2xl font-bold font-display">MEDICAL CTR</div>
-          <div className="text-lg md:text-2xl font-bold font-display hidden sm:block">GLOBAL ORG</div>
-          <div className="text-lg md:text-2xl font-bold font-display hidden sm:block">GOVT DEPT</div>
+      <section className="container mx-auto px-6 lg:px-12 text-center space-y-8 md:space-y-16 overflow-hidden">
+        <h3 className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-muted-foreground">
+          Trusted by Harare's Leading Institutions
+        </h3>
+
+        <div className="relative overflow-hidden">
+          <div className="marquee gap-12 md:gap-24 opacity-60 hover:opacity-100 transition-opacity">
+
+            {/* LOGO SET 1 */}
+            <div className="flex gap-12 md:gap-24">
+              <img src="/logos/university.png" alt="University" className="h-10 md:h-14 w-auto grayscale" />
+              <img src="/logos/medical.png" alt="Medical Center" className="h-10 md:h-14 w-auto grayscale" />
+              <img src="/logos/global.png" alt="Global Org" className="h-10 md:h-14 w-auto grayscale" />
+              <img src="/logos/government.png" alt="Government" className="h-10 md:h-14 w-auto grayscale" />
+            </div>
+
+            {/* LOGO SET 2 (duplicate for seamless loop) */}
+            <div className="flex gap-12 md:gap-24">
+              <img src="/logos/university.png" alt="University" className="h-10 md:h-14 w-auto grayscale" />
+              <img src="/logos/medical.png" alt="Medical Center" className="h-10 md:h-14 w-auto grayscale" />
+              <img src="/logos/global.png" alt="Global Org" className="h-10 md:h-14 w-auto grayscale" />
+              <img src="/logos/government.png" alt="Government" className="h-10 md:h-14 w-auto grayscale" />
+            </div>
+
+          </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="container mx-auto px-6 lg:px-12">
