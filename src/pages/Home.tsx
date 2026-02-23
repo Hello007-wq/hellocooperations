@@ -24,12 +24,12 @@ const services = [
   },
 ];
 
-const institutions = [
-  { name: 'Colleges & Universities', icon: School },
-  { name: 'Hospitals & Healthcare', icon: Hospital },
-  { name: 'Government Organizations', icon: Building2 },
-  { name: 'Corporate Enterprises', icon: Users },
-];
+// const institutions = [
+//   { name: 'Colleges & Universities' },
+//   { name: 'Hospitals & Healthcare' },
+//   { name: 'Government Organizations'},
+//   { name: 'Corporate Enterprises'},
+// ];
 
 export function Home() {
   return (
@@ -75,18 +75,18 @@ export function Home() {
       </section>
 
       {/* Stats/Institutions Section */}
-      <section className="container mx-auto px-6 lg:px-12 py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
-          {institutions.map((item) => (
-            <div key={item.name} className="flex flex-col items-center justify-center text-center space-y-2 md:space-y-3">
-              <div className="p-2 md:p-3 bg-primary/10 rounded-xl md:rounded-2xl text-primary">
-                <item.icon className="w-5 h-5 md:w-8 md:h-8" />
-              </div>
-              <span className="font-display font-bold text-xs md:text-base">{item.name}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* <section className="container mx-auto px-6 lg:px-12 py-12 md:py-16"> */}
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12"> */}
+          {/* {institutions.map((item) => ( */}
+            {/* <div key={item.name} className="flex flex-col items-center justify-center text-center space-y-2 md:space-y-3"> */}
+              {/* <div className="p-2 md:p-3 bg-primary/10 rounded-xl md:rounded-2xl text-primary"> */}
+                {/* <item.icon className="w-5 h-5 md:w-8 md:h-8" /> */}
+              {/* </div> */}
+              {/* <span className="font-display font-bold text-xs md:text-base">{item.name}</span> */}
+            {/* </div> */}
+          {/* ))} */}
+        {/* </div> */}
+      {/* </section> */}
 
       {/* Services Overview */}
       <section className="container mx-auto px-6 lg:px-12 space-y-12 md:space-y-16">
@@ -139,7 +139,7 @@ export function Home() {
                 {[
                   { title: 'Enterprise-Ready', icon: Shield, desc: 'Secure, scalable solutions built for high-stakes environments.' },
                   { title: 'Rapid Delivery', icon: Zap, desc: 'Efficient workflows that respect your institutional timelines.' },
-                  { title: 'Global Standards', icon: Globe, desc: 'World-class tech stack applied to local Zimbabwean needs.' },
+                  { title: 'Global Standards', icon: Globe, desc: 'World-class tech stack applied to local African needs.' },
                   { title: 'Dedicated Support', icon: Users, desc: 'Ongoing maintenance to ensure your systems never stop.' },
                 ].map((item) => (
                   <div key={item.title} className="space-y-2 md:space-y-3">
@@ -190,7 +190,7 @@ export function Home() {
       {/* Trust Section */}
       <section className="container mx-auto px-6 lg:px-12 text-center space-y-8 md:space-y-16 overflow-hidden">
         <h3 className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-muted-foreground">
-          Trusted by Harare's Leading Institutions
+          Trusted by Zimbabwe's Leading Institutions
         </h3>
 
         <div className="relative overflow-hidden">
@@ -198,24 +198,23 @@ export function Home() {
 
             {/* LOGO SET 1 */}
             <div className="flex gap-12 md:gap-24">
-              <img src="/logos/university.png" alt="University" className="h-10 md:h-14 w-auto grayscale" />
-              <img src="/logos/medical.png" alt="Medical Center" className="h-10 md:h-14 w-auto grayscale" />
-              <img src="/logos/global.png" alt="Global Org" className="h-10 md:h-14 w-auto grayscale" />
-              <img src="/logos/government.png" alt="Government" className="h-10 md:h-14 w-auto grayscale" />
+              <img src="/logos/university.png" alt="University" className="h-10 md:h-14 w-auto " />
+              <img src="/logos/medical.png" alt="Medical Center" className="h-10 md:h-14 w-auto" />
+              <img src="/logos/global.png" alt="Global Org" className="h-10 md:h-14 w-auto " />
+              <img src="/logos/government.png" alt="Government" className="h-10 md:h-14 w-auto" />
             </div>
 
             {/* LOGO SET 2 (duplicate for seamless loop) */}
             <div className="flex gap-12 md:gap-24">
-              <img src="/logos/university.png" alt="University" className="h-10 md:h-14 w-auto grayscale" />
-              <img src="/logos/medical.png" alt="Medical Center" className="h-10 md:h-14 w-auto grayscale" />
-              <img src="/logos/global.png" alt="Global Org" className="h-10 md:h-14 w-auto grayscale" />
-              <img src="/logos/government.png" alt="Government" className="h-10 md:h-14 w-auto grayscale" />
+              <img src="/partner1.png" alt="University" className="h-30 md:h-14 w-auto " />
+              <img src="/logos/medical.png" alt="Medical Center" className="h-10 md:h-14 w-auto" />
+              <img src="/logos/global.png" alt="Global Org" className="h-10 md:h-14 w-auto" />
+              <img src="/logos/government.png" alt="Government" className="h-10 md:h-14 w-auto" />
             </div>
 
           </div>
         </div>
       </section>
-
 
       {/* CTA Section */}
       <section className="container mx-auto px-6 lg:px-12">
@@ -223,7 +222,7 @@ export function Home() {
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
           <h2 className="text-2xl md:text-6xl font-display font-bold relative z-10">Ready to transform your <br className="hidden md:block" /> institution?</h2>
           <p className="text-blue-100 text-sm md:text-xl max-w-2xl mx-auto relative z-10">
-            Join the ranks of Harare's most digitally-advanced organizations. Let's build your future together.
+            Join the ranks of Zimbabwe's most digitally-advanced organizations. Let's build your future together.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 relative z-10 pt-2 md:pt-4">
             <Link to="/contact">

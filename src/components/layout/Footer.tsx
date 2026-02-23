@@ -31,7 +31,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
-              Smart software, bold design & digital growth. Harare's trusted digital transformation partner for institutions.
+              Smart software, bold design & digital growth. Zimbabwe's trusted digital transformation partner for institutions.
             </p>
             <div className="flex items-center gap-4">
               {/* <a href="#" className="p-2 bg-background border rounded-full hover:bg-primary hover:text-white transition-all">
@@ -54,9 +54,9 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li><Link to="/services" className="hover:text-primary transition-colors">Web Development</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors">Mobile App Development</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">AI Automation</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors">System Development</Link></li>
               <li><Link to="/services" className="hover:text-primary transition-colors">UI/UX & Branding</Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors">AI Automation</Link></li>
             </ul>
           </div>
 

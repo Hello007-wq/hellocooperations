@@ -42,6 +42,15 @@ const services = [
     benefit: 'Operational efficiency, automation, and data clarity.',
   },
   {
+    id: 'ai-automation',
+    title: 'AI Automation',
+    icon: Layers,
+    image: '/n8n.png',
+    what: 'AI-powered automation, chatbots, and decision-support systems.',
+    who: 'Institutions handling repetitive workflows and high enquiry volumes.',
+    benefit: 'Lower costs, faster service delivery, smarter decisions.',
+  },
+  {
     id: 'ui-ux',
     title: 'UI/UX Design',
     icon: Layers,
@@ -76,15 +85,6 @@ const services = [
     what: 'Strategic content and ad campaigns across social platforms.',
     who: 'Schools and hospitals reaching new audiences.',
     benefit: 'Measured growth and stronger communities.',
-  },
-  {
-    id: 'ai-automation',
-    title: 'AI Automation',
-    icon: Layers,
-    image: '/ai-automation.jfif',
-    what: 'AI-powered automation, chatbots, and decision-support systems.',
-    who: 'Institutions handling repetitive workflows and high enquiry volumes.',
-    benefit: 'Lower costs, faster service delivery, smarter decisions.',
   },
   {
     id: 'support',
@@ -155,7 +155,7 @@ export function Services() {
 
       {/* Detailed Service (only when selected) */}
       {activeService && (
-        <section className="container mx-auto px-4 md:px-6 space-y-16 border-t pt-24">
+        <section className="container mx-auto px-4 md:px-6 space-y-1 border-t pt-24">
           <button
             onClick={() => {
               setActiveService(null);
@@ -163,7 +163,7 @@ export function Services() {
             }}
             className="text-sm font-bold text-primary hover:underline"
           >
-            ← Back to all services
+            Back to all services
           </button>
 
           {services
@@ -191,7 +191,7 @@ export function Services() {
                   </div>
 
                   <Link to="/contact">
-                    <Button className="rounded-full px-8 h-12 group">
+                    <Button className="rounded-full px-8 mt-6 h-12 group">
                       Inquire About This Service
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>

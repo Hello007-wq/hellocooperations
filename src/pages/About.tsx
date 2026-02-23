@@ -31,10 +31,10 @@ export function About() {
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl font-display font-bold">Our Story</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  In a rapidly evolving digital landscape, many organizations in Zimbabwe found themselves left behind by generic solutions that didn't understand the unique needs of institutional scale.
+                  In a rapidly evolving digital landscape, many organizations in Africa found themselves left behind by generic solutions that didn't understand the unique needs of institutional scale.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Hello Co-Operations was born from the collective expertise of designers, developers, and strategists who believed that Harare's colleges, hospitals, and enterprises deserved world-class digital assets. We set out to build a firm that combines technical rigor with a deep understanding of organizational growth.
+                  Hello Co-Operations was born from the collective expertise of designers, developers, and strategists who believed that Africa's colleges, hospitals, and enterprises deserved world-class digital assets. We set out to build a firm that combines technical rigor with a deep understanding of organizational growth.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-8">
@@ -62,7 +62,7 @@ export function About() {
             <Target className="w-12 h-12 text-blue-200" />
             <h3 className="text-3xl font-display font-bold">Our Mission</h3>
             <p className="text-blue-50 leading-relaxed text-lg">
-              To empower Zimbabwean institutions through bold design, innovative software, and strategic digital marketing, ensuring they lead in their respective sectors.
+              To empower African institutions through bold design, innovative software, and strategic digital marketing, ensuring they lead in their respective sectors.
             </p>
           </div>
           <div className="p-12 bg-card border rounded-[3rem] space-y-6 shadow-elegant relative overflow-hidden">
@@ -72,7 +72,7 @@ export function About() {
             <Eye className="w-12 h-12 text-primary" />
             <h3 className="text-3xl font-display font-bold">Our Vision</h3>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              To be the premier digital transformation firm in Southern Africa, recognized for building the most resilient and impactful digital ecosystems for institutions.
+              To be the premier digital transformation firm in Africa, recognized for building the most resilient and impactful digital ecosystems for institutions.
             </p>
           </div>
         </div>

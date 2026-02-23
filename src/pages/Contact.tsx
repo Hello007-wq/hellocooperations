@@ -77,7 +77,7 @@ export function Contact() {
       const to = 'hellocooperations@gmail.com';
       const subject = encodeURIComponent(`Inquiry: ${service} - ${institution}`);
       const body = encodeURIComponent(
-        `Hello Hello Co-Operations,\n\nMy name is ${name} from ${institution}.` +
+        `Hi Hello Co-Operations,\n\nMy name is ${name} from ${institution}.` +
         `\nI'm interested in ${service}.` +
         `\n\nMessage: ${message}` +
         `\n\nEmail: ${email}`
@@ -260,7 +260,7 @@ export function Contact() {
       </section>
 
       {/* Map Placeholder */}
-      <section className="container mx-auto px-4 md:px-6">
+      {/* <section className="container mx-auto px-4 md:px-6">
         <div className="h-[400px] bg-secondary/30 rounded-[4rem] flex items-center justify-center text-muted-foreground border border-dashed relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/map-grid.png')] opacity-20" />
           <div className="relative z-10 flex flex-col items-center gap-4">
@@ -268,7 +268,7 @@ export function Contact() {
             <span className="font-display font-bold text-xl">Harare, Zimbabwe</span>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

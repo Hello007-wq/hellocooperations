@@ -4,7 +4,7 @@ import { ExternalLink, Code, Palette, BarChart4 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-const categories = ['Software', 'Design', 'Marketing'];
+const categories = ['Software','Automation', 'Design', 'Marketing'];
 
 const projects = [
   {
@@ -31,77 +31,77 @@ const projects = [
     tags: ['Lead Gen', 'Facebook Ads', 'SEO', 'Email Funnels'],
     stat: 'Progress Monitor'
   },
+  // {
+  //   title: 'Forex-Education App',
+  //   category: 'Automation',
+  //   desc: `A mobile app that serves as a guard to one's navigation to the world of Forex trade. Foxerly provides the basics of forex trade`,
+  //   image: '/foxerly.png',
+  //   tags: ['Native Android', 'Vite', 'Variables'],
+  //   stat: 'Easy Navigation'
+  // },
+  // {
+  //   title: 'Credit Score',
+  //   category: 'Automation',
+  //   desc: 'A comprehensive platform providing users with their credit score and report to ensure financial health',
+  //   image: '/credit score.png',
+  //   tags: ['React TSX', 'Supabase', 'Evaluation'],
+  //   stat: 'Financial Health'
+  // },
+  // {
+  //   title: 'E-Commerce Fashion Website',
+  //   category: 'Automation',
+  //   desc: 'Your premier destination for trendy clothing and accessories.',
+  //   image: '/kwamefashion.png',
+  //   tags: ['Supabase', 'Stripe', 'React TSX'],
+  //   stat: 'Global Reach'
+  // },
   {
-    title: 'Forex-Education App',
-    category: 'Software',
-    desc: `A mobile app that serves as a guard to one's navigation to the world of Forex trade. Foxerly provides the basics of forex trade`,
-    image: '/foxerly.png',
-    tags: ['Native Android', 'Vite', 'Variables'],
-    stat: 'Easy Navigation'
-  },
-  {
-    title: 'Credit Score',
-    category: 'Software',
-    desc: 'A comprehensive platform providing users with their credit score and report to ensure financial health',
-    image: '/credit score.png',
-    tags: ['React TSX', 'Supabase', 'Evaluation'],
-    stat: 'Financial Health'
-  },
-  {
-    title: 'E-Commerce Fashion Website',
-    category: 'Software',
-    desc: 'Your premier destination for trendy clothing and accessories.',
-    image: '/kwamefashion.png',
-    tags: ['Supabase', 'Stripe', 'React TSX'],
-    stat: 'Global Reach'
-  },
-  {
-    title: 'Institutional Annual Report',
+    title: 'Custom Web Design',
     category: 'Design',
-    desc: 'High-end editorial design for a government agency annual report, focusing on data visualization and impact storytelling.',
-    image: 'https://images.unsplash.com/photo-1544383335-c54936d52570?auto=format&fit=crop&q=80&w=800',
-    tags: ['Editorial Design', 'Data Visualization', 'Print Design'],
+    desc: 'Story telling and visual web design for a beauty brand, focusing on perfect product display.',
+    image: '/batanabycleo.png',
+    tags: ['Figma Design', 'Visual UI', 'Print Design'],
     stat: 'Impact Storytelling'
   },
   {
-    title: 'Global NGO Digital Strategy',
+    title: 'Automated Welcome Email',
     category: 'Marketing',
-    desc: 'Complete digital strategy and management for an international NGO working in Southern Africa.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
-    tags: ['Digital Strategy', 'Community Management', 'PR'],
-    stat: 'Global Reach'
+    desc: 'Designed and implemented an automated email workflow that sends personalized responses to users, who submit forms on our website.',
+    image: '/email marketing.jpeg',
+    tags: ['Email Marketing', 'Automation', 'Lead Nurture'],
+    stat: 'Open Rate + 40%'
   },
   {
-    title: 'Institutional Annual Report',
+    title: 'Custom Logo Design',
     category: 'Design',
-    desc: 'High-end editorial design for a government agency annual report, focusing on data visualization and impact storytelling.',
-    image: 'https://images.unsplash.com/photo-1544383335-c54936d52570?auto=format&fit=crop&q=80&w=800',
-    tags: ['Editorial Design', 'Data Visualization', 'Print Design'],
-    stat: 'Impact Storytelling'
+    desc: 'Top notch editorial logo design for a sportsman, focusing on activity potrayal and impact storytelling.',
+    image: '/Basketball design.png',
+    tags: ['Logo Design', 'Vector', 'Branding'],
+    stat: 'Visual Tone'
   },
   {
-    title: 'Global NGO Digital Strategy',
+    title: 'AI-Powered Video Campaigns',
     category: 'Marketing',
-    desc: 'Complete digital strategy and management for an international NGO working in Southern Africa.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
-    tags: ['Digital Strategy', 'Community Management', 'PR'],
-    stat: 'Global Reach'
+    desc: 'Created engaging ideo content using AI technology for various case scenarios thus increasing brand awareness',
+    image: '/ai vid.png',
+    tags: ['Content Marketing', 'Video Production', 'AI'],
+    stat: 'Engagement Rate + 25%'
   },
   {
-    title: 'Institutional Annual Report',
+    title: 'Inclusive Learning Platform',
     category: 'Design',
-    desc: 'High-end editorial design for a government agency annual report, focusing on data visualization and impact storytelling.',
-    image: 'https://images.unsplash.com/photo-1544383335-c54936d52570?auto=format&fit=crop&q=80&w=800',
-    tags: ['Editorial Design', 'Data Visualization', 'Print Design'],
-    stat: 'Impact Storytelling'
+    desc: 'Designed the UI of A.B.L.E Learning Inclusive App for children with disabilities to help them learn.',
+    image: '/able.png',
+    tags: ['Education', 'Inclusive', 'Good UI'],
+    stat: 'Accessible'
   },
   {
-    title: 'Global NGO Digital Strategy',
+    title: 'Social Media Campaigns',
     category: 'Marketing',
-    desc: 'Complete digital strategy and management for an international NGO working in Southern Africa.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
-    tags: ['Digital Strategy', 'Community Management', 'PR'],
-    stat: 'Global Reach'
+    desc: 'Implemented a targeted social media campaign to increase followers and engagement on key platforms, enhancing online presence',
+    image: 'marketing1.jfif',
+    tags: ['Social Media', 'Follower Growth', 'Online Presence'],
+    stat: 'Follower Growth'
   },
 ];
 
