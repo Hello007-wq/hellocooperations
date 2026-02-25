@@ -6,7 +6,7 @@ import { Rocket, Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } f
 export function Footer() {
   return (
     <footer className="bg-secondary/30 border-t pt-20 pb-12">
-      <div className="container mx-auto px-8 lg:px-16">
+      <div className="container mx-auto px-4 sm:px-8 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-16">
           <div className="space-y-4">
             {/* <Link to="/" className="flex items-center gap-2">
@@ -21,13 +21,13 @@ export function Footer() {
               <img
                 src="/logo.png"
                 alt="Hello Co-Operations"
-                className="h-13 w-auto object-contain block dark:hidden"
+                className="h-14 md:h-16 w-auto object-contain block dark:hidden"
               />
               {/* Dark theme logo */}
               <img
                 src="/logo-dark.png"
                 alt="Hello Co-Operations"
-                className="h-13 w-auto object-contain hidden dark:block"
+                className="h-14 md:h-16 w-auto object-contain hidden dark:block"
               />
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
@@ -64,7 +64,7 @@ export function Footer() {
             <h3 className="font-display font-bold mb-6">Quick Links</h3>
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link to="/solutions" className="hover:text-primary transition-colors">Solutions</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Solutions</Link></li>
               <li><Link to="/pricing" className="hover:text-primary transition-colors">Pricing</Link></li>
               <li><Link to="/portfolio" className="hover:text-primary transition-colors">Portfolio</Link></li>
             </ul>
@@ -110,7 +110,7 @@ export function Footer() {
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Privacy Policy</DialogTitle>
-                  <DialogDescription>Overview of our psrivacy practices.</DialogDescription>
+                  <DialogDescription>Overview of our privacy practices.</DialogDescription>
                 </DialogHeader>
                 <div className="text-sm text-muted-foreground space-y-3">
                   <p>We collect minimal information necessary to provide our services.</p>

@@ -40,11 +40,17 @@ export function Home() {
           <img
             src="/hero1.png"
             alt="Hero Background"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover block dark:hidden"
           />
           <img
             src="/hero-dark.png"
             alt="Hero Background Dark"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover hidden dark:block"
           />
           <div className="absolute inset-0" />
@@ -194,22 +200,22 @@ export function Home() {
         </h3>
 
         <div className="relative overflow-hidden">
-          <div className="marquee gap-12 md:gap-24 opacity-60 hover:opacity-100 transition-opacity">
+          <div className="marquee gap-12 md:gap-24">
 
             {/* LOGO SET 1 */}
             <div className="flex gap-12 md:gap-24">
-              <img src="/logos/university.png" alt="University" className="h-10 md:h-14 w-auto " />
-              <img src="/logos/medical.png" alt="Medical Center" className="h-10 md:h-14 w-auto" />
-              <img src="/logos/global.png" alt="Global Org" className="h-10 md:h-14 w-auto " />
-              <img src="/logos/government.png" alt="Government" className="h-10 md:h-14 w-auto" />
+              <img src="/logos/university.png" alt="University" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto " />
+              <img src="/logos/medical.png" alt="Medical Center" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
+              <img src="/logos/global.png" alt="Global Org" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto " />
+              <img src="/logos/government.png" alt="Government" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
             </div>
 
             {/* LOGO SET 2 (duplicate for seamless loop) */}
             <div className="flex gap-12 md:gap-24">
-              <img src="/partner1.png" alt="University" className="h-30 md:h-14 w-auto " />
-              <img src="/logos/medical.png" alt="Medical Center" className="h-10 md:h-14 w-auto" />
-              <img src="/logos/global.png" alt="Global Org" className="h-10 md:h-14 w-auto" />
-              <img src="/logos/government.png" alt="Government" className="h-10 md:h-14 w-auto" />
+              <img src="/partner1.png" alt="University" loading="lazy" decoding="async" className="h-14 md:h-14 w-auto " />
+              <img src="/logos/medical.png" alt="Medical Center" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
+              <img src="/logos/global.png" alt="Global Org" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
+              <img src="/logos/government.png" alt="Government" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
             </div>
 
           </div>

@@ -8,6 +8,7 @@ import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { Pricing } from './pages/Pricing';
 import { Portfolio } from './pages/Portfolio';
+import { PortfolioMore } from './pages/PortfolioMore';
 import { Team } from './pages/Team';
 import { Contact } from './pages/Contact';
 
@@ -43,6 +44,8 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/more" element={<PortfolioMore />} />
+          <Route path="/portfolio/more/:category" element={<PortfolioMore />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

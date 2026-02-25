@@ -3,110 +3,11 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, Code, Palette, BarChart4 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-
-const categories = ['Software','Automation', 'Design', 'Marketing'];
-
-const projects = [
-  {
-    title: 'Health Care Native App',
-    category: 'Software',
-    desc: 'A completely offline mobile android app for a health institution to help patients with general medical issues.',
-    image: '/health aid app.png',
-    tags: ['React Native', 'Android', 'TypeScript'],
-    stat: '100+ Active Users'
-  },
-  {
-    title: 'AI Note Taking Platform',
-    category: 'Software',
-    desc: 'Professional and sleek platform to use as a note taking tool. It is integrated with an AI that can depict notes even from podcasts',
-    image: '/SmartScribe Logo.png',
-    tags: ['API Integration', 'React JSX', 'Tailwind CSS'],
-    stat: 'Modern & Reliable'
-  },
-  {
-    title: 'Anime Trackr',
-    category: 'Software',
-    desc: 'A native tool, people can use to track their progress on their watched shows specifically anime genre.',
-    image: '/anime trackr.png',
-    tags: ['Lead Gen', 'Facebook Ads', 'SEO', 'Email Funnels'],
-    stat: 'Progress Monitor'
-  },
-  // {
-  //   title: 'Forex-Education App',
-  //   category: 'Automation',
-  //   desc: `A mobile app that serves as a guard to one's navigation to the world of Forex trade. Foxerly provides the basics of forex trade`,
-  //   image: '/foxerly.png',
-  //   tags: ['Native Android', 'Vite', 'Variables'],
-  //   stat: 'Easy Navigation'
-  // },
-  // {
-  //   title: 'Credit Score',
-  //   category: 'Automation',
-  //   desc: 'A comprehensive platform providing users with their credit score and report to ensure financial health',
-  //   image: '/credit score.png',
-  //   tags: ['React TSX', 'Supabase', 'Evaluation'],
-  //   stat: 'Financial Health'
-  // },
-  // {
-  //   title: 'E-Commerce Fashion Website',
-  //   category: 'Automation',
-  //   desc: 'Your premier destination for trendy clothing and accessories.',
-  //   image: '/kwamefashion.png',
-  //   tags: ['Supabase', 'Stripe', 'React TSX'],
-  //   stat: 'Global Reach'
-  // },
-  {
-    title: 'Custom Web Design',
-    category: 'Design',
-    desc: 'Story telling and visual web design for a beauty brand, focusing on perfect product display.',
-    image: '/batanabycleo.png',
-    tags: ['Figma Design', 'Visual UI', 'Print Design'],
-    stat: 'Impact Storytelling'
-  },
-  {
-    title: 'Automated Welcome Email',
-    category: 'Marketing',
-    desc: 'Designed and implemented an automated email workflow that sends personalized responses to users, who submit forms on our website.',
-    image: '/email marketing.jpeg',
-    tags: ['Email Marketing', 'Automation', 'Lead Nurture'],
-    stat: 'Open Rate + 40%'
-  },
-  {
-    title: 'Custom Logo Design',
-    category: 'Design',
-    desc: 'Top notch editorial logo design for a sportsman, focusing on activity potrayal and impact storytelling.',
-    image: '/Basketball design.png',
-    tags: ['Logo Design', 'Vector', 'Branding'],
-    stat: 'Visual Tone'
-  },
-  {
-    title: 'AI-Powered Video Campaigns',
-    category: 'Marketing',
-    desc: 'Created engaging ideo content using AI technology for various case scenarios thus increasing brand awareness',
-    image: '/ai vid.png',
-    tags: ['Content Marketing', 'Video Production', 'AI'],
-    stat: 'Engagement Rate + 25%'
-  },
-  {
-    title: 'Inclusive Learning Platform',
-    category: 'Design',
-    desc: 'Designed the UI of A.B.L.E Learning Inclusive App for children with disabilities to help them learn.',
-    image: '/able.png',
-    tags: ['Education', 'Inclusive', 'Good UI'],
-    stat: 'Accessible'
-  },
-  {
-    title: 'Social Media Campaigns',
-    category: 'Marketing',
-    desc: 'Implemented a targeted social media campaign to increase followers and engagement on key platforms, enhancing online presence',
-    image: 'marketing1.jfif',
-    tags: ['Social Media', 'Follower Growth', 'Online Presence'],
-    stat: 'Follower Growth'
-  },
-];
+import { featuredProjects as projects, portfolioCategories as categories } from '@/data/portfolioProjects';
 
 export function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState('Software');
+  const categoryOnlyOptions = categories.filter((cat) => cat !== 'All');
 
   const filteredProjects = activeCategory === 'All'
     ? projects
@@ -134,7 +35,7 @@ export function Portfolio() {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={cn(
-                "px-6 py-2 rounded-full text-s font-bold transition-all",
+                "px-6 py-2 rounded-full text-sm font-bold transition-all",
                 activeCategory === cat
                   ? "bg-primary text-white shadow-lg"
                   : "hover:bg-primary/10 text-muted-foreground hover:text-primary"
@@ -159,6 +60,8 @@ export function Portfolio() {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
@@ -188,16 +91,38 @@ export function Portfolio() {
               </div>
 
               <div className="p-8 border-t bg-secondary/10">
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   <Button variant="link" className="p-0 h-auto font-bold text-primary group/btn">
-                    View Project
+                    Request Project Demo
                     <ExternalLink className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="container mx-auto px-4 md:px-6 -mt-10">
+        {activeCategory === 'All' ? (
+          <div className="flex flex-wrap justify-center gap-3">
+            {categoryOnlyOptions.map((category) => (
+              <Link key={category} to={`/portfolio/more/${encodeURIComponent(category.toLowerCase())}`}>
+                <Button variant="outline" className="rounded-full px-6">
+                  More {category} Projects
+                </Button>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="flex justify-center">
+            <Link to={`/portfolio/more/${encodeURIComponent(activeCategory.toLowerCase())}`}>
+              <Button variant="outline" className="rounded-full px-6">
+                More {activeCategory} Projects
+              </Button>
+            </Link>
+          </div>
+        )}
       </section>
 
       {/* Process CTA */}

@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import emailjs from 'emailjs-com';
 
 const steps = [
   {
@@ -62,47 +61,36 @@ export function Contact() {
     if (!formEl) {
       return;
     }
+
     const formData = new FormData(formEl);
-    const name = (formData.get('name') || '').toString();
-    const email = (formData.get('email') || '').toString();
-    const institution = (formData.get('institution') || '').toString();
-    const service = (formData.get('service') || '').toString();
-    const message = (formData.get('message') || '').toString();
+    const name = (formData.get('name') || '').toString().trim();
+    const email = (formData.get('email') || '').toString().trim();
+    const institution = (formData.get('institution') || '').toString().trim();
+    const service = (formData.get('service') || '').toString().trim();
+    const message = (formData.get('message') || '').toString().trim();
 
-    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
-    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
-    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
-
-    const fallbackMailto = () => {
-      const to = 'hellocooperations@gmail.com';
-      const subject = encodeURIComponent(`Inquiry: ${service} - ${institution}`);
-      const body = encodeURIComponent(
-        `Hi Hello Co-Operations,\n\nMy name is ${name} from ${institution}.` +
-        `\nI'm interested in ${service}.` +
-        `\n\nMessage: ${message}` +
-        `\n\nEmail: ${email}`
-      );
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    };
-
-    if (SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY) {
-      try {
-        await emailjs.send(
-          SERVICE_ID,
-          TEMPLATE_ID,
-          { name, email, institution, service, message },
-          PUBLIC_KEY
-        );
-        alert('Email sent successfully. We will get back to you shortly.');
-        return;
-      } catch (err) {
-        console.error('EmailJS send failed, falling back to mailto:', err);
-        fallbackMailto();
-        return;
-      }
+    if (!name || !email || !institution || !service || !message) {
+      alert('Please complete the form before sending an email.');
+      return;
     }
 
-    fallbackMailto();
+    const to = 'hellocooperations@gmail.com';
+    const subject = encodeURIComponent(`Inquiry: ${service} - ${institution}`);
+    const body = encodeURIComponent(
+      `Hi Hello Co-Operations,\n\nMy name is ${name} from ${institution}.` +
+      `\nI'm interested in ${service}.` +
+      `\n\nMessage: ${message}` +
+      `\n\nEmail: ${email}`
+    );
+
+    const gmailComposeUrl =
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${subject}&body=${body}`;
+
+    const newWindow = window.open(gmailComposeUrl, '_blank');
+
+    if (!newWindow) {
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    }
   };
 
   return (
@@ -179,7 +167,7 @@ export function Contact() {
                 <div>
                   <h4 className="font-bold text-lg mb-1">WhatsApp</h4>
                   <p className="text-muted-foreground">+263 771 629 805</p>
-                  <p className="text-xs text-primary mt-1 font-bold">Message Hello Co-Operations now →</p>
+                  <p className="text-xs text-primary mt-1 font-bold">Message Hello Co-Operations now {'->'}</p>
                 </div>
               </a>
               <a

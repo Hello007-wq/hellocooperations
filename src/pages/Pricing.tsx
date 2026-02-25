@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Check, ShieldCheck, CreditCard, Clock, Layers } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -52,6 +52,22 @@ const pricingTiers = [
 ];
 
 export function Pricing() {
+  const mobileCarouselRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const container = mobileCarouselRef.current;
+    if (!container) return;
+
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile) return;
+
+    const middleCard = container.children[1] as HTMLElement | undefined;
+    if (!middleCard) return;
+
+    const left = middleCard.offsetLeft - (container.clientWidth - middleCard.clientWidth) / 2;
+    container.scrollTo({ left: Math.max(0, left), behavior: 'auto' });
+  }, []);
+
   return (
     <div className="flex flex-col gap-24 pb-20 pt-32">
       {/* Hero */}
@@ -69,13 +85,13 @@ export function Pricing() {
       {/* Pricing Tiers */}
       <section className="container mx-auto px-4 md:px-6 space-y-12">
         {/* MOBILE CAROUSEL */}
-        <div className="md:hidden -mx-4 px-4 overflow-x-auto">
-          <div className="flex gap-6 snap-x snap-mandatory overflow-x-scroll pb-6">
+        <div className="md:hidden -mx-4 px-4 overflow-x-auto pt-4 pb-2">
+          <div ref={mobileCarouselRef} className="flex gap-6 snap-x snap-mandatory overflow-x-scroll pt-2 pb-8">
             {pricingTiers.map((tier) => (
               <div
                 key={tier.name}
                 className={`snap-center min-w-[85%] p-8 rounded-[3rem] flex flex-col gap-8 transition-all ${tier.highlight
-                  ? 'bg-primary text-white shadow-glow ring-4 ring-primary/20 scale-[1.02]'
+                  ? 'bg-primary text-white shadow-glow ring-4 ring-primary/20'
                   : 'bg-card border'
                   }`}
               >
@@ -118,12 +134,12 @@ export function Pricing() {
         </div>
 
         {/* DESKTOP GRID */}
-        <div className="hidden md:grid grid-cols-3 gap-8">
+        <div className="hidden md:grid grid-cols-3 gap-8 items-stretch pt-6 overflow-visible">
           {pricingTiers.map((tier) => (
             <div
               key={tier.name}
               className={`p-10 rounded-[3rem] flex flex-col gap-8 transition-all ${tier.highlight
-                ? 'bg-primary text-white shadow-glow ring-4 ring-primary/20 scale-105 relative z-10'
+                ? 'bg-primary text-white shadow-glow ring-4 ring-primary/20 relative z-10'
                 : 'bg-card border shadow-sm hover:shadow-elegant'
                 }`}
             >

@@ -60,10 +60,10 @@ export function Navbar() {
         scrolled ? 'bg-background/90 backdrop-blur-md border-b py-4 shadow-sm' : 'bg-transparent py-6'
       )}
     >
-      <div className="container mx-auto px-8 lg:px-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-16">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group shrink-0">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] md:text-xs font-bold tracking-wider">
+            <div className="inline-flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[9px] sm:text-[10px] md:text-xs font-bold tracking-wider max-w-[68vw] sm:max-w-none truncate">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-100"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -108,7 +108,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Toggle */}
-          <div className="lg:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"

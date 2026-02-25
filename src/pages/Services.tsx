@@ -181,7 +181,7 @@ export function Services() {
                       <p className="text-muted-foreground">{service.what}</p>
                     </div>
                     <div className="p-6 bg-secondary/30 rounded-2xl">
-                      <h4 className="font-bold text-primary text-sm uppercase">Who it’s for</h4>
+                      <h4 className="font-bold text-primary text-sm uppercase">Who it's for</h4>
                       <p className="text-muted-foreground">{service.who}</p>
                     </div>
                     <div className="p-6 bg-primary/5 border border-primary/10 rounded-2xl">

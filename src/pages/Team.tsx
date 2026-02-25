@@ -13,7 +13,7 @@ const team = [
   },
   {
     name: 'Weston N. Sululu',
-    role: 'CHief Creative Officer',
+    role: 'Chief Creative Officer',
     expertise: 'Institutional Design',
     // bio: 'Weston is a visionary designer focused on creating bold, professional identities for Harare\'s leading organizations. He ensures every Hello Co-Ops project meets world-class design standards.',
     icon: Palette,
@@ -48,10 +48,10 @@ export function Team() {
       <section className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {team.map((member) => (
-            <div key={member.name} className="group flex flex-col items-center text-center space-y-8 p-12 bg-card border rounded-[4rem] hover:shadow-elegant transition-all">
+            <div key={member.name} className="group flex flex-col items-center text-center space-y-8 p-8 md:p-12 bg-card border rounded-[2.5rem] md:rounded-[4rem] hover:shadow-elegant transition-all">
               <div className="relative">
                 <div className="w-48 h-48 rounded-[3rem] overflow-hidden shadow-xl ring-8 ring-primary/5 group-hover:ring-primary/10 transition-all group-hover:scale-105 duration-500">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                  <img src={member.image} alt={member.name} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-white shadow-lg">
                   <member.icon className="w-6 h-6" />
@@ -110,12 +110,12 @@ export function Team() {
               </div>
             </div>
 
-            <div className="relative aspect-square lg:aspect-auto h-full min-h-[400px] rounded-[4rem] overflow-hidden shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" alt="Team collaborating" className="w-full h-full object-cover" />
+            <div className="hidden md:block relative aspect-square lg:aspect-auto h-full min-h-[400px] rounded-[4rem] overflow-hidden shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" alt="Team collaborating" loading="lazy" decoding="async" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
               <div className="absolute bottom-12 left-12 right-12 text-white">
                 <div className=" text-2xl font-display font-bold mb-2 italic">"Institutional transformation is a marathon, not a sprint."</div>
-                <div className="font-bold uppercase tracking-widest text-sm opacity-80">— Hello Co-Operations Founders</div>
+                <div className="font-bold uppercase tracking-widest text-sm opacity-80">- Hello Co-Operations Founders</div>
               </div>
             </div>
           </div>
