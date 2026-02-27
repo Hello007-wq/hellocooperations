@@ -97,7 +97,7 @@ export function Footer() {
         </div>
 
         <div className="border-t pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Hello Co-Operations. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Hello Co-Operations. All rights reserved.</p>
           {/* <div className="flex gap-6">
             <a href="#" className="hover:text-primary">Privacy Policy</a>
             <a href="#" className="hover:text-primary">Terms of Service</a>

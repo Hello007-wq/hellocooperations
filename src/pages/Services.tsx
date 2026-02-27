@@ -45,7 +45,7 @@ const services = [
     id: 'ai-automation',
     title: 'AI Automation',
     icon: Layers,
-    image: '/n8n.png',
+    image: '/ai vid.png',
     what: 'AI-powered automation, chatbots, and decision-support systems.',
     who: 'Institutions handling repetitive workflows and high enquiry volumes.',
     benefit: 'Lower costs, faster service delivery, smarter decisions.',

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: https://hellocooperations.com
+Sitemap: https://hellocooperations.com/sitemap.xml

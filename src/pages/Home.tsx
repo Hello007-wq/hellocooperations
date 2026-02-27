@@ -58,10 +58,10 @@ export function Home() {
         <div className="container mx-auto px-8 lg:px-16 relative z-10 flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 space-y-6 md:space-y-8 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-display leading-tight text-white">
-              Digital Transformation for the <br /> <span className="text-gradient">Future-Ready</span> Institution
+              Tech Company in Zimbabwe for <br /> <span className="text-gradient">Future-Ready</span> Institutions
             </h1>
             <p className="text-sm md:text-base text-white/90 max-w-2xl leading-relaxed">
-              Hello Co-Operations delivers smart software, bold design, and digital growth strategies to help colleges, hospitals, and organizations thrive in the digital age.
+              Hello Co-Operations is a Harare-based tech company in Zimbabwe delivering smart software, bold design, and digital growth strategies for colleges, hospitals, and organizations.
             </p>
             <div className="flex flex-wrap gap-3 md:gap-4 pt-2 md:pt-4">
               <Link to="/contact">
@@ -77,6 +77,17 @@ export function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="container mx-auto px-6 lg:px-12">
+        <div className="max-w-4xl space-y-4">
+          <h2 className="text-2xl md:text-4xl font-display font-bold">
+            Looking for tech companies in Zimbabwe?
+          </h2>
+          <p className="text-muted-foreground text-sm md:text-lg leading-relaxed">
+            We help organizations across Zimbabwe build websites, mobile apps, internal systems, and marketing funnels that drive measurable growth.
+          </p>
         </div>
       </section>
 
@@ -204,18 +215,18 @@ export function Home() {
 
             {/* LOGO SET 1 */}
             <div className="flex gap-12 md:gap-24">
-              <img src="/logos/university.png" alt="University" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto " />
-              <img src="/logos/medical.png" alt="Medical Center" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
-              <img src="/logos/global.png" alt="Global Org" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto " />
-              <img src="/logos/government.png" alt="Government" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
+              <img src="/college.jfif" alt="Education client" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto " />
+              <img src="/medical.jfif" alt="Healthcare client" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
+              <img src="/corporate.png" alt="Corporate client" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto " />
+              <img src="/partner1.png" alt="Partner organization" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
             </div>
 
             {/* LOGO SET 2 (duplicate for seamless loop) */}
             <div className="flex gap-12 md:gap-24">
-              <img src="/partner1.png" alt="University" loading="lazy" decoding="async" className="h-14 md:h-14 w-auto " />
-              <img src="/logos/medical.png" alt="Medical Center" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
-              <img src="/logos/global.png" alt="Global Org" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
-              <img src="/logos/government.png" alt="Government" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
+              <img src="/college.jfif" alt="Education client" loading="lazy" decoding="async" className="h-14 md:h-14 w-auto " />
+              <img src="/medical.jfif" alt="Healthcare client" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
+              <img src="/corporate.png" alt="Corporate client" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
+              <img src="/partner1.png" alt="Partner organization" loading="lazy" decoding="async" className="h-10 md:h-14 w-auto" />
             </div>
 
           </div>
