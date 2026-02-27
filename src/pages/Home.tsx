@@ -58,7 +58,7 @@ export function Home() {
         <div className="container mx-auto px-8 lg:px-16 relative z-10 flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 space-y-6 md:space-y-8 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-display leading-tight text-white">
-              Tech Company in Zimbabwe for <br /> <span className="text-gradient">Future-Ready</span> Institutions
+              Digital Transformation for the <br /> <span className="text-gradient">Future-Ready</span> Institutions
             </h1>
             <p className="text-sm md:text-base text-white/90 max-w-2xl leading-relaxed">
               Hello Co-Operations is a Harare-based tech company in Zimbabwe delivering smart software, bold design, and digital growth strategies for colleges, hospitals, and organizations.
@@ -83,26 +83,26 @@ export function Home() {
       <section className="container mx-auto px-6 lg:px-12">
         <div className="max-w-4xl space-y-4">
           <h2 className="text-2xl md:text-4xl font-display font-bold">
-            Looking for tech companies in Zimbabwe?
+            Looking for your Tech Partner in Africa?
           </h2>
           <p className="text-muted-foreground text-sm md:text-lg leading-relaxed">
-            We help organizations across Zimbabwe build websites, mobile apps, internal systems, and marketing funnels that drive measurable growth.
+            We help organizations across Africa build websites, mobile apps, internal systems, and marketing funnels that drive measurable growth.
           </p>
         </div>
       </section>
 
       {/* Stats/Institutions Section */}
       {/* <section className="container mx-auto px-6 lg:px-12 py-12 md:py-16"> */}
-        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12"> */}
-          {/* {institutions.map((item) => ( */}
-            {/* <div key={item.name} className="flex flex-col items-center justify-center text-center space-y-2 md:space-y-3"> */}
-              {/* <div className="p-2 md:p-3 bg-primary/10 rounded-xl md:rounded-2xl text-primary"> */}
-                {/* <item.icon className="w-5 h-5 md:w-8 md:h-8" /> */}
-              {/* </div> */}
-              {/* <span className="font-display font-bold text-xs md:text-base">{item.name}</span> */}
-            {/* </div> */}
-          {/* ))} */}
-        {/* </div> */}
+      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12"> */}
+      {/* {institutions.map((item) => ( */}
+      {/* <div key={item.name} className="flex flex-col items-center justify-center text-center space-y-2 md:space-y-3"> */}
+      {/* <div className="p-2 md:p-3 bg-primary/10 rounded-xl md:rounded-2xl text-primary"> */}
+      {/* <item.icon className="w-5 h-5 md:w-8 md:h-8" /> */}
+      {/* </div> */}
+      {/* <span className="font-display font-bold text-xs md:text-base">{item.name}</span> */}
+      {/* </div> */}
+      {/* ))} */}
+      {/* </div> */}
       {/* </section> */}
 
       {/* Services Overview */}
