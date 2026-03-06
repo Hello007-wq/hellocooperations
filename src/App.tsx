@@ -12,6 +12,12 @@ import { PortfolioMore } from './pages/PortfolioMore';
 import { Team } from './pages/Team';
 import { Contact } from './pages/Contact';
 
+declare global {
+  interface Window {
+    __n8nChatInitialized?: boolean;
+  }
+}
+
 type SeoEntry = {
   title: string;
   description: string;
@@ -153,6 +159,64 @@ function App() {
     } else {
       document.documentElement.classList.toggle('dark', userPrefersDark);
     }
+  }, []);
+
+  useEffect(() => {
+    if (window.__n8nChatInitialized) {
+      return;
+    }
+
+    const stylesheetId = 'n8n-chat-stylesheet';
+    const existingStylesheet = document.getElementById(stylesheetId) as HTMLLinkElement | null;
+
+    if (!existingStylesheet) {
+      const stylesheet = document.createElement('link');
+      stylesheet.id = stylesheetId;
+      stylesheet.rel = 'stylesheet';
+      stylesheet.href = 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css';
+      document.head.appendChild(stylesheet);
+    }
+
+    const overridesId = 'n8n-chat-theme-overrides';
+    if (!document.getElementById(overridesId)) {
+      const overrideStyles = document.createElement('style');
+      overrideStyles.id = overridesId;
+      overrideStyles.textContent = `
+        :root, .n8n-chat, body .n8n-chat {
+          --chat--color-primary: #2563eb;
+          --chat--color-primary-shade-50: #1d4ed8;
+          --chat--color-primary-shade-100: #1e40af;
+          --chat--color-secondary: #eaf1ff;
+          --chat--header--background: linear-gradient(135deg, #2563eb, #3b82f6);
+          --chat--message--user--background: #2563eb;
+        }
+        .n8n-chat .chat-window-toggle, .n8n-chat [class*='chat-window-toggle'] {
+          background: linear-gradient(135deg, #2563eb, #3b82f6) !important;
+        }
+      `;
+      document.head.appendChild(overrideStyles);
+    }
+
+    let isCancelled = false;
+
+    (async () => {
+      try {
+        const { createChat } = await import('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js');
+        if (isCancelled) return;
+
+        createChat({
+          webhookUrl: '/n8n-chat',
+          mode: 'window',
+        });
+        window.__n8nChatInitialized = true;
+      } catch (error) {
+        console.error('Failed to initialize n8n chat widget:', error);
+      }
+    })();
+
+    return () => {
+      isCancelled = true;
+    };
   }, []);
 
   return (

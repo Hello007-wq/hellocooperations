@@ -96,7 +96,7 @@ export const featuredProjects: FeaturedProject[] = [
 
 export const moreProjects: ListedProject[] = [
   { name: 'Student Portal Upgrade', category: 'Software', summary: 'Institution portal redesign with admissions, notices, and fee tracking modules.' },
-  { name: 'Clinic Queue Assistant', category: 'Software', summary: 'Appointment and patient queue experience for faster front-desk operations.' },
+  { name: 'Health Care Assistant', category: 'Software', summary: 'A developed mobile app for patience to use for less critical diseases, either for symptoms' },
   { name: 'Internal Staff Dashboard', category: 'Software', summary: 'Role-based dashboard for operations reporting and team coordination.' },
   { name: 'College E-Learning Hub', category: 'Software', summary: 'Course delivery portal with notices, class resources, and assignment tracking.' },
   { name: 'Hospital Records Front Desk App', category: 'Software', summary: 'Fast patient lookup and registration workflow for reception and triage desks.' },
