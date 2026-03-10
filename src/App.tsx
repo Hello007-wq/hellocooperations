@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
+import { SupportChat } from './components/chat/SupportChat';
 
 // Pages (to be implemented)
 import { Home } from './pages/Home';
@@ -12,20 +13,11 @@ import { PortfolioMore } from './pages/PortfolioMore';
 import { Team } from './pages/Team';
 import { Contact } from './pages/Contact';
 
-declare global {
-  interface Window {
-    __n8nChatInitialized?: boolean;
-  }
-}
-
 type SeoEntry = {
   title: string;
   description: string;
 };
-
 const BASE_URL = 'https://hellocooperations.com';
-const DEFAULT_N8N_CHAT_WEBHOOK_URL = 'https://basicchatbot77.app.n8n.cloud/webhook/1c3a1dfc-cb31-4178-b752-c0e74773290c/chat';
-const N8N_CHAT_WEBHOOK_URL = import.meta.env.VITE_N8N_CHAT_WEBHOOK_URL?.trim() || DEFAULT_N8N_CHAT_WEBHOOK_URL;
 
 const SEO_BY_PATH: Record<string, SeoEntry> = {
   '/': {
@@ -163,45 +155,6 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    if (window.__n8nChatInitialized) {
-      return;
-    }
-
-    const stylesheetId = 'n8n-chat-stylesheet';
-    const existingStylesheet = document.getElementById(stylesheetId) as HTMLLinkElement | null;
-
-    if (!existingStylesheet) {
-      const stylesheet = document.createElement('link');
-      stylesheet.id = stylesheetId;
-      stylesheet.rel = 'stylesheet';
-      stylesheet.href = 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css';
-      document.head.appendChild(stylesheet);
-    }
-
-    let isCancelled = false;
-
-    (async () => {
-      try {
-        const { createChat } = await import('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js');
-        if (isCancelled) return;
-
-        const webhookUrl = import.meta.env.DEV ? '/n8n-chat' : N8N_CHAT_WEBHOOK_URL;
-        createChat({
-          webhookUrl,
-          mode: 'window',
-        });
-        window.__n8nChatInitialized = true;
-      } catch (error) {
-        console.error('Failed to initialize n8n chat widget:', error);
-      }
-    })();
-
-    return () => {
-      isCancelled = true;
-    };
-  }, []);
-
   return (
     <Router>
       <ScrollToTop />
@@ -219,6 +172,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>
+      <SupportChat />
     </Router>
   );
 }
