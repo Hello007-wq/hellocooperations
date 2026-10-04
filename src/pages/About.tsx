@@ -22,11 +22,11 @@ export function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] sm:aspect-[5/4] lg:aspect-square shadow-2xl min-h-[320px] md:min-h-[420px]">
               <img
-                src="/office.jfif"
+                src="/office.png"
                 alt="Office space"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[center_0%]"
               />
             </div>
             <div className="space-y-8">
